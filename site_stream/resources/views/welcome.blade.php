@@ -14,8 +14,9 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #636b6f;
+                /* color: #636b6f; */
+                color : #fff;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -51,7 +52,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -64,10 +65,16 @@
                 margin-bottom: 30px;
             }
             .prices {
-              background-color: #636b6f;
+              background-color: #fff;
             }
             .prices_title {
-              color : #fff;
+              color : #636b6f;
+            }
+            .bold {
+              font-weight: bold;
+            }
+            .ita {
+              font-style: italic;
             }
         </style>
     </head>
@@ -106,26 +113,37 @@
                 <div style="display:inline-flex;">
                     <!-- <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a> -->
-                    <div class="card" style="width: 25rem; margin-right:10%; border-radius:8%;">
+                    <div class="card prices_title" style="width: 25rem; margin-right:10%; border-radius:8%; box-shadow:5px 5px 5px;">
                       <div class="card-body">
-                        <h5 class="card-title"> 4$99 </h5>
-                        <h6 class="card-subtitle mb-2 text-muted"> Limited </h6>
+                        <h5 class="bold card-title"> 4$99 </h5>
+                        <h6 class="ita card-subtitle mb-2 text-muted"> Limited </h6>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link"> Choose </a>
                       </div>
                     </div>
-                    <div class="card" style="width: 25rem; border-radius:8%;">
+                    <div class="card prices_title" style="width: 25rem; border-radius:8%; box-shadow:5px 5px 5px;">
                       <div class="card-body">
-                        <h5 class="card-title"> 9$99 </h5>
-                        <h6 class="card-subtitle mb-2 text-muted"> Illimited </h6>
+                        <h5 class="bold card-title"> 9$99 </h5>
+                        <h6 class="ita card-subtitle mb-2 text-muted"> Illimited </h6>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link"> Choose </a>
                       </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-center position-ref full-height">
+            <div class="content">
+                <div class="title m-b-md">
+                    Contenu
+                </div>
+
+                <div class="links">
+                    <p> Mettre un fond avec plein de film etc </p>
                 </div>
             </div>
         </div>
