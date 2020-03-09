@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="module" src="index.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -76,6 +78,13 @@
             .ita {
               font-style: italic;
             }
+            .mar5 {
+              margin: 3%;
+              width: 110px;
+            }
+            .fond {
+              background-image: url(../../../public/img/fond.jpg);
+            }
         </style>
     </head>
     <body>
@@ -136,14 +145,17 @@
                 </div>
             </div>
         </div>
-        <div class="flex-center position-ref full-height">
+        <div class="fond flex-center position-ref full-height">
             <div class="content">
-                <div class="title m-b-md">
-                    Contenu
+                <div class="m-b-md" style="font-size:50px;">
+                    Your favorite movies & shows in one place
                 </div>
-
                 <div class="links">
-                    <p> Mettre un fond avec plein de film etc </p>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
                 </div>
             </div>
         </div>
