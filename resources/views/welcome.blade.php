@@ -8,14 +8,17 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="module" src="index.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #636b6f;
+                /* color: #636b6f; */
+                color : #fff;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -51,7 +54,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -64,10 +67,23 @@
                 margin-bottom: 30px;
             }
             .prices {
-              background-color: #636b6f;
+              background-color: #fff;
             }
             .prices_title {
-              color : #fff;
+              color : #636b6f;
+            }
+            .bold {
+              font-weight: bold;
+            }
+            .ita {
+              font-style: italic;
+            }
+            .mar5 {
+              margin: 3%;
+              width: 110px;
+            }
+            .fond {
+              background-image: url(../../../public/img/fond.jpg);
             }
         </style>
     </head>
@@ -106,26 +122,40 @@
                 <div style="display:inline-flex;">
                     <!-- <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a> -->
-                    <div class="card" style="width: 25rem; margin-right:10%; border-radius:8%;">
+                    <div class="card prices_title" style="width: 25rem; margin-right:10%; border-radius:8%; box-shadow:5px 5px 5px;">
                       <div class="card-body">
-                        <h5 class="card-title"> 4$99 </h5>
-                        <h6 class="card-subtitle mb-2 text-muted"> Limited </h6>
+                        <h5 class="bold card-title"> 4$99 </h5>
+                        <h6 class="ita card-subtitle mb-2 text-muted"> Limited </h6>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link"> Choose </a>
                       </div>
                     </div>
-                    <div class="card" style="width: 25rem; border-radius:8%;">
+                    <div class="card prices_title" style="width: 25rem; border-radius:8%; box-shadow:5px 5px 5px;">
                       <div class="card-body">
-                        <h5 class="card-title"> 9$99 </h5>
-                        <h6 class="card-subtitle mb-2 text-muted"> Illimited </h6>
+                        <h5 class="bold card-title"> 9$99 </h5>
+                        <h6 class="ita card-subtitle mb-2 text-muted"> Illimited </h6>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link"> Choose </a>
                       </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="fond flex-center position-ref full-height">
+            <div class="content">
+                <div class="m-b-md" style="font-size:50px;">
+                    Your favorite movies & shows in one place
+                </div>
+                <div class="links">
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
                 </div>
             </div>
         </div>
