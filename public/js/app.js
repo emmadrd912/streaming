@@ -37136,6 +37136,26 @@ var Media = /*#__PURE__*/function () {
     value: function remplir() {
       _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].id("poster").src = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].posterUrl(this.data.poster_path);
     }
+  }, {
+    key: "remplir1",
+    value: function remplir1() {
+      _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].id("poster1").src = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].posterUrl(this.data.poster_path);
+    }
+  }, {
+    key: "remplir2",
+    value: function remplir2() {
+      _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].id("poster2").src = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].posterUrl(this.data.poster_path);
+    }
+  }, {
+    key: "remplir3",
+    value: function remplir3() {
+      _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].id("poster3").src = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].posterUrl(this.data.poster_path);
+    }
+  }, {
+    key: "remplir4",
+    value: function remplir4() {
+      _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].id("poster4").src = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].posterUrl(this.data.poster_path);
+    }
   }]);
 
   return Media;
@@ -37341,12 +37361,72 @@ var traiterMedia = function traiterMedia(data, type) {
   media.remplir();
 };
 
+var traiterMedia1 = function traiterMedia1(data, type) {
+  var media = type == "movie" ? new _Classes_Film_js__WEBPACK_IMPORTED_MODULE_2__["default"](data) : new _Classes_Serie_js__WEBPACK_IMPORTED_MODULE_1__["default"](data);
+  media.remplir1();
+};
+
+var traiterMedia2 = function traiterMedia2(data, type) {
+  var media = type == "movie" ? new _Classes_Film_js__WEBPACK_IMPORTED_MODULE_2__["default"](data) : new _Classes_Serie_js__WEBPACK_IMPORTED_MODULE_1__["default"](data);
+  media.remplir2();
+};
+
+var traiterMedia3 = function traiterMedia3(data, type) {
+  var media = type == "movie" ? new _Classes_Film_js__WEBPACK_IMPORTED_MODULE_2__["default"](data) : new _Classes_Serie_js__WEBPACK_IMPORTED_MODULE_1__["default"](data);
+  media.remplir3();
+};
+
+var traiterMedia4 = function traiterMedia4(data, type) {
+  var media = type == "movie" ? new _Classes_Film_js__WEBPACK_IMPORTED_MODULE_2__["default"](data) : new _Classes_Serie_js__WEBPACK_IMPORTED_MODULE_1__["default"](data);
+  media.remplir4();
+};
+
 var chargerMedia = function chargerMedia() {
   var id = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].getParam("id");
   var type = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].getParam("type");
   var url = "https://api.themoviedb.org/3/movie/501170?api_key=f3e0583eb3254bc512360eb077868839&language=fr-FR";
+  var url2 = "https://api.themoviedb.org/3/movie/744?api_key=f3e0583eb3254bc512360eb077868839&language=fr-FR";
+  var url3 = "https://api.themoviedb.org/3/movie/181808?api_key=f3e0583eb3254bc512360eb077868839&language=fr-FR";
+  var url4 = "https://api.themoviedb.org/3/tv/62560?api_key=f3e0583eb3254bc512360eb077868839&language=fr-FR";
+  var url5 = "https://api.themoviedb.org/3/tv/62476?api_key=f3e0583eb3254bc512360eb077868839&language=fr-FR";
   axios.get(url).then(function (response) {
     return traiterMedia(response.data, type);
+  })["catch"](function (error) {
+    if (error.response && error.response.status == 404) {
+      alert("Média introuvable !");
+    } else {
+      console.error(error);
+    }
+  });
+  axios.get(url2).then(function (response) {
+    return traiterMedia1(response.data, type);
+  })["catch"](function (error) {
+    if (error.response && error.response.status == 404) {
+      alert("Média introuvable !");
+    } else {
+      console.error(error);
+    }
+  });
+  axios.get(url3).then(function (response) {
+    return traiterMedia2(response.data, type);
+  })["catch"](function (error) {
+    if (error.response && error.response.status == 404) {
+      alert("Média introuvable !");
+    } else {
+      console.error(error);
+    }
+  });
+  axios.get(url4).then(function (response) {
+    return traiterMedia3(response.data, type);
+  })["catch"](function (error) {
+    if (error.response && error.response.status == 404) {
+      alert("Média introuvable !");
+    } else {
+      console.error(error);
+    }
+  });
+  axios.get(url5).then(function (response) {
+    return traiterMedia4(response.data, type);
   })["catch"](function (error) {
     if (error.response && error.response.status == 404) {
       alert("Média introuvable !");

@@ -107,7 +107,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Streaming
+                    Flixnet
                 </div>
 
                 <div class="links">
@@ -126,7 +126,7 @@
                     <a href="https://laracasts.com">Laracasts</a> -->
                     <div class="card prices_title" style="width: 25rem; margin-right:10%; border-radius:8%; box-shadow:5px 5px 5px;">
                       <div class="card-body">
-                        <h5 class="bold card-title"> 4$99 </h5>
+                        <h5 class="bold card-title"> Free </h5>
                         <h6 class="ita card-subtitle mb-2 text-muted"> Limited </h6>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -134,16 +134,16 @@
                         <a href="#" class="card-link"> Choose </a>
                       </div>
                     </div>
-                    <!-- <div class="card prices_title" style="width: 25rem; border-radius:8%; box-shadow:5px 5px 5px;">
+                    <div class="card prices_title" style="width: 25rem; border-radius:8%; box-shadow:5px 5px 5px;">
                       <div class="card-body">
                         <h5 class="bold card-title"> 9$99 </h5>
-                        <h6 class="ita card-subtitle mb-2 text-muted"> unlimited </h6>
+                        <h6 class="ita card-subtitle mb-2 text-muted"> Unlimited </h6>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link"> Choose </a>
                       </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,10 +154,10 @@
                 </div>
                 <div class="links">
                   <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" id="poster" class="mar5"/>
-                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
-                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
-                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
-                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" id="poster1" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" id="poster2" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" id="poster3" class="mar5"/>
+                  <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" id="poster4" class="mar5"/>
                 </div>
             </div>
         </div>
