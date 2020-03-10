@@ -7,4 +7,5 @@ export default class Media {
 
   remplir() {
     Helpers.id("poster").src = Helpers.posterUrl(this.data.poster_path);
+  }
 }

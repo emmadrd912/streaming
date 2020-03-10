@@ -2,7 +2,7 @@ import Helpers from "./Helpers.js";
 import Serie from "./Classes/Serie.js";
 import Film from "./Classes/Film.js";
 
-const apiKey = "f3e0583eb3254bc512360eb077868839";
+const apiKey = "97719463bea4bd4b5902c1a735c0556a";
 
 const traiterMedia = (data, type) => {
   const media = type == "movie" ? new Film(data) : new Serie(data);
@@ -12,7 +12,7 @@ const traiterMedia = (data, type) => {
 const chargerMedia = () => {
   const id = Helpers.getParam("id");
   const type = Helpers.getParam("type");
-  const url = `https://api.themoviedb.org/3/movie/422?api_key=${apiKey}&language=fr-FR`;
+  const url = `https://api.themoviedb.org/3/movie/501170?api_key=f3e0583eb3254bc512360eb077868839&language=fr-FR`;
   axios
     .get(url)
     .then(response => traiterMedia(response.data, type))

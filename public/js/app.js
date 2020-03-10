@@ -37045,6 +37045,197 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Classes/Film.js":
+/*!**************************************!*\
+  !*** ./resources/js/Classes/Film.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Film; });
+/* harmony import */ var _Media_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Media.js */ "./resources/js/Classes/Media.js");
+/* harmony import */ var _Helpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Helpers.js */ "./resources/js/Helpers.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Film = /*#__PURE__*/function (_Media) {
+  _inherits(Film, _Media);
+
+  function Film(data) {
+    _classCallCheck(this, Film);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Film).call(this, data));
+  }
+
+  _createClass(Film, [{
+    key: "remplir",
+    value: function remplir() {
+      _get(_getPrototypeOf(Film.prototype), "remplir", this).call(this);
+    }
+  }]);
+
+  return Film;
+}(_Media_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Classes/Media.js":
+/*!***************************************!*\
+  !*** ./resources/js/Classes/Media.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Media; });
+/* harmony import */ var _Helpers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Helpers.js */ "./resources/js/Helpers.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Media = /*#__PURE__*/function () {
+  function Media(data) {
+    _classCallCheck(this, Media);
+
+    this.data = data;
+  }
+
+  _createClass(Media, [{
+    key: "remplir",
+    value: function remplir() {
+      _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].id("poster").src = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].posterUrl(this.data.poster_path);
+    }
+  }]);
+
+  return Media;
+}();
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Classes/Serie.js":
+/*!***************************************!*\
+  !*** ./resources/js/Classes/Serie.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Serie; });
+/* harmony import */ var _Media_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Media.js */ "./resources/js/Classes/Media.js");
+/* harmony import */ var _Helpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Helpers.js */ "./resources/js/Helpers.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Serie = /*#__PURE__*/function (_Media) {
+  _inherits(Serie, _Media);
+
+  function Serie(data) {
+    _classCallCheck(this, Serie);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Serie).call(this, data));
+  }
+
+  _createClass(Serie, [{
+    key: "remplir",
+    value: function remplir() {
+      _get(_getPrototypeOf(Serie.prototype), "remplir", this).call(this);
+    }
+  }]);
+
+  return Serie;
+}(_Media_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Helpers.js":
+/*!*********************************!*\
+  !*** ./resources/js/Helpers.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var Helpers = {
+  getParam: function getParam(name) {
+    var params = new URLSearchParams(document.location.search);
+    return params.get(name);
+  },
+  id: function id(_id) {
+    return document.getElementById(_id);
+  },
+  remplirChamp: function remplirChamp(id, text) {
+    document.getElementById(id).innerText = text;
+  },
+  backdropUrl: function backdropUrl(suffix) {
+    return "https://image.tmdb.org/t/p/w1280".concat(suffix);
+  },
+  posterUrl: function posterUrl(suffix) {
+    return "https://image.tmdb.org/t/p/w154".concat(suffix);
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (Helpers);
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -37057,7 +37248,9 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! ./index */ "./resources/js/index.js"); // window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -37123,6 +37316,47 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/index.js":
+/*!*******************************!*\
+  !*** ./resources/js/index.js ***!
+  \*******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Helpers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Helpers.js */ "./resources/js/Helpers.js");
+/* harmony import */ var _Classes_Serie_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Classes/Serie.js */ "./resources/js/Classes/Serie.js");
+/* harmony import */ var _Classes_Film_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Classes/Film.js */ "./resources/js/Classes/Film.js");
+
+
+
+var apiKey = "97719463bea4bd4b5902c1a735c0556a";
+
+var traiterMedia = function traiterMedia(data, type) {
+  var media = type == "movie" ? new _Classes_Film_js__WEBPACK_IMPORTED_MODULE_2__["default"](data) : new _Classes_Serie_js__WEBPACK_IMPORTED_MODULE_1__["default"](data);
+  media.remplir();
+};
+
+var chargerMedia = function chargerMedia() {
+  var id = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].getParam("id");
+  var type = _Helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].getParam("type");
+  var url = "https://api.themoviedb.org/3/movie/501170?api_key=f3e0583eb3254bc512360eb077868839&language=fr-FR";
+  axios.get(url).then(function (response) {
+    return traiterMedia(response.data, type);
+  })["catch"](function (error) {
+    if (error.response && error.response.status == 404) {
+      alert("Média introuvable !");
+    } else {
+      console.error(error);
+    }
+  });
+};
+
+window.addEventListener("load", chargerMedia);
 
 /***/ }),
 
