@@ -83,7 +83,7 @@
               width: 110px;
             }
             .fond {
-              background-image: url(../../public/img/fond.jpg);
+              background-image: url({{ asset('img/fond.jpg') }});
             }
         </style>
     </head>
@@ -132,7 +132,7 @@
                         <a href="#" class="card-link"> Choose </a>
                       </div>
                     </div>
-                    <div class="card prices_title" style="width: 25rem; border-radius:8%; box-shadow:5px 5px 5px;">
+                    <!-- <div class="card prices_title" style="width: 25rem; border-radius:8%; box-shadow:5px 5px 5px;">
                       <div class="card-body">
                         <h5 class="bold card-title"> 9$99 </h5>
                         <h6 class="ita card-subtitle mb-2 text-muted"> unlimited </h6>
@@ -141,7 +141,7 @@
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link"> Choose </a>
                       </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
