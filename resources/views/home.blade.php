@@ -17,7 +17,7 @@
                     You are logged in!
 
 
-                    <form action="/add-video" method="POST">
+                    <form action="/add-video" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="field">
                             <label class="label"> New video </label>
