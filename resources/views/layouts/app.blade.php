@@ -67,6 +67,13 @@
                                 </div>
                             </li>
                         @endguest
+                        @if(Auth::check())
+                            @if (Auth::user()->isAdmin())
+                              <li class="nav-item">
+                                <a class="nav-link" href="{{ url('users') }}"> Admin panel </a>
+                              </li>
+                            @endif
+                        @endif
                     </ul>
                 </div>
             </div>
