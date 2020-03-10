@@ -87,6 +87,19 @@
               background-size: cover;
               background-image: url({{ asset('img/fondfinal.png') }});
             }
+            .boxes {
+              width: 25rem;
+              border-radius:8%;
+              box-shadow:
+                0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                0 12.5px 10px rgba(0, 0, 0, 0.06),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                0 100px 80px rgba(0, 0, 0, 0.12)
+                ;
+              background: white;
+            }
         </style>
     </head>
     <body>
@@ -124,7 +137,7 @@
                 <div style="display:inline-flex;">
                     <!-- <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a> -->
-                    <div class="card prices_title" style="width: 25rem; margin-right:10%; border-radius:8%; box-shadow:5px 5px 5px;">
+                    <div class="boxes card prices_title" style="margin-right:10%;">
                       <div class="card-body">
                         <h5 class="bold card-title"> Free </h5>
                         <h6 class="ita card-subtitle mb-2 text-muted"> Limited </h6>
@@ -134,7 +147,7 @@
                         <a href="#" class="card-link"> Choose </a>
                       </div>
                     </div>
-                    <div class="card prices_title" style="width: 25rem; border-radius:8%; box-shadow:5px 5px 5px;">
+                    <div class="boxes card prices_title">
                       <div class="card-body">
                         <h5 class="bold card-title"> 9$99 </h5>
                         <h6 class="ita card-subtitle mb-2 text-muted"> Unlimited </h6>
