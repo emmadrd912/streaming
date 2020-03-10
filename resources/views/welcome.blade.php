@@ -83,16 +83,16 @@
               width: 110px;
             }
             .fond {
-              background-image: url(../../../public/img/fond.jpg);
+              background-image: url(../../public/img/fond.jpg);
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height fond">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">My account</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="links">
-                    <p> Mettre une phrase d'accroche </p>
+                    <p> Welcome on the best streaming site </p>
                 </div>
             </div>
         </div>
@@ -135,7 +135,7 @@
                     <div class="card prices_title" style="width: 25rem; border-radius:8%; box-shadow:5px 5px 5px;">
                       <div class="card-body">
                         <h5 class="bold card-title"> 9$99 </h5>
-                        <h6 class="ita card-subtitle mb-2 text-muted"> Illimited </h6>
+                        <h6 class="ita card-subtitle mb-2 text-muted"> unlimited </h6>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>

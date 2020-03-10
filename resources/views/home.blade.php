@@ -15,6 +15,27 @@
                     @endif
 
                     You are logged in!
+
+
+                    <form action="/add-video" method="POST">
+                        @csrf
+                        <div class="field">
+                            <label class="label"> New video </label>
+                            <div class="control">
+                                <input class="input" type="file" name="video">
+                            </div>
+                            @if($errors->has('video'))
+                                <p class="help is-danger">{{ $errors->first('video') }}</p>
+                            @endif
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-link" type="submit">Add video</button>
+                            </div>
+                        </div>            
+                    </form>
+
+
                 </div>
             </div>
         </div>
