@@ -3,9 +3,25 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema; //NEW: Import Schema
+use Illuminate\Support\Facades\Blade;
+
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Schema::defaultStringLength(191); //NEW: Increase StringLength  //
+        Blade::if('admin', function () {
+            return auth()->check() && auth()->user()->admin;
+        });
+    }
+
     /**
      * Register any application services.
      *
@@ -14,15 +30,5 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        \Illuminate\Support\Facades\Schema::defaultStringLength(191);
     }
 }

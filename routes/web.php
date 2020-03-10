@@ -26,3 +26,10 @@ Route::get('/catalog', function () {
 });
 
 Route::post('/add-video', 'HomeController@addvideo');
+//
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::resource('users', 'UsersController');
+    Route::resource('roles','RoleController');
+});
+
+// Route::resource('users', 'UsersController');
