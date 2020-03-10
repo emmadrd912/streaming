@@ -13,14 +13,17 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-      $admin = Role::where('name', 'admin')->first();
-      $free = Role::where('name', 'free')->first();
-      $premium = Role::where('name', 'premium')->first();
-
+      //Permet de se créer en Admin (change tes données)
       DB::table('users')->insert([
-          'name' => 'Emma',
-          'email' => 'emmadrd912@gmail.com',
+          'id' => 1,
+          'name' => 'Lucas',
+          'email' => 'lucasdu33@gmail.com',
           'password' => bcrypt('toortoor'),
+      ]);
+      DB::table('model_has_roles')->insert([
+            'role_id' => 1,
+            'model_type' => 'App\User',
+            'model_id' => 1
       ]);
     }
 }
