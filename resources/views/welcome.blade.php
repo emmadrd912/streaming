@@ -83,7 +83,9 @@
               width: 110px;
             }
             .fond {
-              background-image: url({{ asset('img/fond.jpg') }});
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-image: url({{ asset('img/fondfinal.png') }});
             }
         </style>
     </head>
