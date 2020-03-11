@@ -6,3 +6,45 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.fond {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('img/fondfinal.png');
+}
+
+.height100 {
+  height: 100vh;
+}
+
+.h1stream {
+  margin-left: 5%;
+  color: #fff;
+  padding: 0 25px;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.h1stream:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.pagelog {
+  margin-left: 5%;
+  color: #fff;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.pagelog:hover {
+  color: white;
+  text-decoration: none;
+}

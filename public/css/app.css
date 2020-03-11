@@ -10882,3 +10882,45 @@ a.text-dark:focus {
   }
 }
 
+.fond {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/images/fondfinal.png?f7bfa71430ba68974cf2f6c0c1a2dd8f);
+}
+
+.height100 {
+  height: 100vh;
+}
+
+.h1stream {
+  margin-left: 5%;
+  color: #fff;
+  padding: 0 25px;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.h1stream:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.pagelog {
+  margin-left: 5%;
+  color: #fff;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.pagelog:hover {
+  color: white;
+  text-decoration: none;
+}
+
