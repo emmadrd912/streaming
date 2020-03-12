@@ -67,6 +67,12 @@
                                 </div>
                             </li>
                         @endguest
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ url('home') }}"> My account </a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ url('catalog') }}"> Catalog </a>
+                        </li>
                         @if(Auth::check())
                             @if (Auth::user()->isAdmin())
                               <li class="nav-item">
