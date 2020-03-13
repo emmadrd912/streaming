@@ -31,3 +31,22 @@ require('./index');
 // const app = new Vue({
 //     el: '#app',
 // });
+
+$(function() {
+    console.log('test');
+    $('#premiumprices').hide();
+    $('#freeprices').hide();
+    $('#roleprices').change(function(){
+      console.log($('#roleprices').val());
+        if($('#roleprices').val() == 'premium') {
+            $('#premiumprices').show();
+        } else {
+            $('#premiumprices').hide();
+        }
+        if($('#roleprices').val() == 'free') {
+            $('#freeprices').show();
+        } else {
+            $('#freeprices').hide();
+        }
+    });
+});
