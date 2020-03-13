@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
       //Permet de se créer en Admin (change tes données)
       DB::table('users')->insert([
           'id' => 1,
-          'name' => 'Lucas',
-          'email' => 'lucasdu33@gmail.com',
+          'name' => 'Emma',
+          'email' => 'emmadrd912@gmail.com',
           'password' => bcrypt('toortoor'),
       ]);
       DB::table('model_has_roles')->insert([
