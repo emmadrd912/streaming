@@ -55,4 +55,26 @@ class User extends Authenticatable
         }
     }
 
+    public function isFree()
+    {
+        foreach ($this->roles()->get() as $role)
+        {
+            if ($role->name == 'free')
+            {
+                return true;
+            }
+        }
+    }
+
+    public function isPremium()
+    {
+        foreach ($this->roles()->get() as $role)
+        {
+            if ($role->name == 'premium')
+            {
+                return true;
+            }
+        }
+    }
+
 }

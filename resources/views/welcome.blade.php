@@ -144,7 +144,7 @@
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link"> Choose </a>
+                        <a href="{{ route('login') }}" class="card-link"> Choose </a>
                       </div>
                     </div>
                     <div class="boxes card prices_title">
@@ -154,7 +154,7 @@
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link"> Choose </a>
+                        <a href="{{ route('login') }}" class="card-link"> Choose </a>
                       </div>
                     </div>
                 </div>

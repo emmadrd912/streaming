@@ -70,27 +70,8 @@
                         			<option value="free"> Free </option>
                         			<option value="premium"> Premium </option>
                         		</select>
-                            <div id="freeprices">
-                              <div class="card-body">
-                                <h5 class="bold card-title"> Free </h5>
-                                <h6 class="ita card-subtitle mb-2 text-muted"> Limited </h6>
-                                <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              </div>
-                            </div>
-                            <div id="premiumprices">
-                              <div class="card-body">
-                                <h5 class="bold card-title"> 9$99 </h5>
-                                <h6 class="ita card-subtitle mb-2 text-muted"> Unlimited </h6>
-                                <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              </div>
-                            </div>
                         	</div>
                         </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -99,6 +80,24 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div id="premiumprices">
+                  <div class="card-body">
+                    <h5 class="bold card-title"> 9$99 </h5>
+                    <h6 class="ita card-subtitle mb-2 text-muted"> Unlimited </h6>
+                    <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div id="freeprices">
+                  <div class="card-body">
+                    <h5 class="bold card-title"> Free </h5>
+                    <h6 class="ita card-subtitle mb-2 text-muted"> Limited </h6>
+                    <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
                 </div>
             </div>
         </div>
