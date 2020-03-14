@@ -23,6 +23,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/add-video', 'HomeController@addvideo');
 
+Route::group(['middleware' => ['role:premium|admin|free']], function () {
+    Route::resource('profile', 'ProfileController');
+});
+
 Route::group(['middleware' => ['role:premium|admin']], function () {
     Route::get('/catalog', function () { return view('catalog'); });
 });
