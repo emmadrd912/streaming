@@ -21,12 +21,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/catalog', function () { return view('catalog'); });
-Route::get('/catalogfree', function () { return view('catalogfree'); });
-
 Route::post('/add-video', 'HomeController@addvideo');
-//
+
+Route::group(['middleware' => ['role:premium|admin']], function () {
+    Route::get('/catalog', function () { return view('catalog'); });
+});
+
 Route::group(['middleware' => ['role:admin']], function () {
     Route::resource('users', 'UsersController');
     Route::resource('roles','RoleController');
+});
+
+Route::group(['middleware' => ['role:free']], function () {
+    Route::get('/catalogfree', function () { return view('catalogfree'); });
 });
