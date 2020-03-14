@@ -78,6 +78,13 @@
                             @endif
                         @endif
                         @if(Auth::check())
+                            @if (Auth::user()->isFree())
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('catalogfree') }}"> Catalog </a>
+                            </li>
+                            @endif
+                        @endif
+                        @if(Auth::check())
                             @if (Auth::user()->isAdmin())
                               <li class="nav-item">
                                 <a class="nav-link" href="{{ url('users') }}"> Admin panel </a>
