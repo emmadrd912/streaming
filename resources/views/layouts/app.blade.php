@@ -64,12 +64,10 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    <a class="dropdown-item" href="{{ url('profile') }}"> My account </a>
                                 </div>
                             </li>
                         @endguest
-                        <li class="nav-item">
-                                <a class="nav-link" href="{{ url('profile') }}"> My account </a>
-                        </li>
                         @if(Auth::check())
                             @if (Auth::user()->isPremium())
                             <li class="nav-item">
@@ -86,12 +84,12 @@
                         @endif
                         @if(Auth::check())
                             @if (Auth::user()->isAdmin())
-                              <li class="nav-item">
-                                <a class="nav-link" href="{{ url('users') }}"> Admin panel </a>
-                              </li>
-                              <li class="nav-item">
-                                      <a class="nav-link" href="{{ url('catalog') }}"> Catalog </a>
-                              </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('catalog') }}"> Catalog </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ url('users') }}"> Admin panel </a>
+                            </li>
                             @endif
                         @endif
                     </ul>
