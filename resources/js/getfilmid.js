@@ -1,3 +1,4 @@
+import TMDB from "./Classes/TMDB.js";
 function successCB(data) {
     // console.log(data);
     let stored = JSON.parse(data);
@@ -8,4 +9,4 @@ function successCB(data) {
             console.log("Error callback: " + data);
       };
   
-  const film = theMovieDb.search.getMovie({"query":"Fight Club"}, successCB, errorCB);
+  const film = TMDB.theMovieDb.search.getMovie({"query":"Fight Club"}, successCB, errorCB);
