@@ -15,12 +15,24 @@
                     @endif
 
                     You are logged in!
-
-
-                    <form action="/add-video" method="POST" enctype="multipart/form-data">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Ajouter un contenu</div>
+                <div class="card-body">
+                <form>
+                <label class="radio-inline"><input type="radio" name="ContentSelect" checked>Film</label>
+                <label class="radio-inline"><input type="radio" name="ContentSelect">Série</label>
+                </form>
+                <form action="{{ route('content.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="field">
-                            <label class="label"> New video </label>
+                            <div class="form-group">
+                                <label for="film_name">Film name :</label>
+                                <input type='text' class="form-control" name="filmname" placeholder="Name of the movie"></input>
+                            </div>
+                        </div>
+                        <div class="field">
                             <div class="control">
                                 <input class="input" type="file" name="video">
                             </div>
@@ -30,12 +42,10 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <button class="button is-link" type="submit">Add video</button>
+                                <button class="btn btn-primary" type="submit">Add video</button>
                             </div>
                         </div>            
                     </form>
-
-
                 </div>
             </div>
         </div>
