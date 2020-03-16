@@ -70,7 +70,14 @@ class ProfileController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-   public function update(Request $request, $id) {
+   public function update(Request $request, $id)
+   {
+       $request->validate([
+         'name'=>'required',
+         'email'=> 'required|string',
+         'password' => 'required|string',
+       ]);
+
        $user = User::findOrFail($id);
        $user->name = $request->get('name');
        $user->email = $request->get('email');

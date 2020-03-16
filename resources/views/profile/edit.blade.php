@@ -1,5 +1,6 @@
-@section('content')@include('layouts.app')
+@include('layouts.app')
 
+@section('content')
 <div class="container">
 <style>
   .uper {
