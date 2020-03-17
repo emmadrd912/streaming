@@ -3,9 +3,10 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
+require('./TMDB');
 require('./bootstrap');
 require('./index');
+
 
 // window.Vue = require('vue');
 
@@ -32,23 +33,16 @@ require('./index');
 //     el: '#app',
 // });
 //
-$(function() {
-    $('#premiumprices').hide();
-    $('#freeprices').hide();
-    // $('#roleprices').change(function(){
-    //     if($('#roleprices').val() == 'premium') {
-    //         $('#premiumprices').show();
-    //         // document.getElementsByClassName('height100').style.height = "auto";
-    //         // document.getElementsByClassName('fond').style.backgroundSize = "cover";
-    //     } else {
-    //         $('#premiumprices').hide();
-    //         // document.getElementsByClassName('.height100').style.height = "100vh";
-    //         // document.getElementsByClassName('fond').style.backgroundSize = "contain";
-    //     }
-    //     if($('#roleprices').val() == 'free') {
-    //         $('#freeprices').show();
-    //     } else {
-    //         $('#freeprices').hide();
-    //     }
-    // });
-});
+
+function successCB(data) {
+  // console.log(data);
+  let stored = JSON.parse(data);
+  console.log(stored.results[0].id);
+};
+
+function errorCB(data) {
+          console.log("Error callback: " + data);
+    };
+
+const film = theMovieDb.search.getMovie({"query":"Fight Club"}, successCB, errorCB);
+console.log(film);

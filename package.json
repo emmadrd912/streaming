@@ -24,6 +24,9 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "child_process": "^1.0.2",
+        "fs": "0.0.1-security",
+        "googleapis": "^48.0.0",
         "xmlhttprequest": "^1.8.0"
     }
 }
