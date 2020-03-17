@@ -47104,7 +47104,7 @@ if ( true && module.exports) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./TMDB */ "./resources/js/TMDB.js");
+var theMovieDb = __webpack_require__(/*! ./TMDB */ "./resources/js/TMDB.js");
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -47130,6 +47130,25 @@ __webpack_require__(/*! ./index */ "./resources/js/index.js"); // window.Vue = r
 //     el: '#app',
 // });
 //
+
+
+function successCB(data) {
+  // console.log(data);
+  var stored = JSON.parse(data);
+  console.log(stored.results[0].id);
+}
+
+;
+
+function errorCB(data) {
+  console.log("Error callback: " + data);
+}
+
+;
+var film = theMovieDb.search.getMovie({
+  "query": "Fight Club"
+}, successCB, errorCB);
+console.log(film);
 
 /***/ }),
 
@@ -47276,24 +47295,6 @@ var chargerMedia = function chargerMedia() {
 };
 
 window.addEventListener("load", chargerMedia);
-
-function successCB(data) {
-  // console.log(data);
-  var stored = JSON.parse(data);
-  console.log(stored.results[0].id);
-}
-
-;
-
-function errorCB(data) {
-  console.log("Error callback: " + data);
-}
-
-;
-var film = theMovieDb.search.getMovie({
-  "query": "Fight Club"
-}, successCB, errorCB);
-console.log(film);
 
 /***/ }),
 
