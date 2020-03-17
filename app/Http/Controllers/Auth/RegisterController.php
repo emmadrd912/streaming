@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Mail;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -74,6 +75,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $to_name = $data['name'];
+        $to_email = $data['email'];
+        $test = array('name'=>$data['name'], "body" => "Votre compte a bien était crée.");
+        Mail::send('emails.mail', $test, function($message) use ($to_name, $to_email)
+        {
+            $message->to($to_email, $to_name)
+                    ->subject('Account registered');
+            $message->from('mymonitornawak@gmail.com', 'flixnet');
+        });
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
