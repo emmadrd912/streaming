@@ -40,3 +40,4 @@ Route::group(['middleware' => ['role:admin']], function () {
 Route::group(['middleware' => ['role:free']], function () {
     Route::get('/catalogfree', function () { return view('catalogfree'); });
 });
+Route::get('/sendmail', 'MailController@sendmail');
