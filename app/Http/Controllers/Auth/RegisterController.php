@@ -77,7 +77,7 @@ class RegisterController extends Controller
     {
         $to_name = $data['name'];
         $to_email = $data['email'];
-        $test = array('name'=>$data['name'], "body" => "Votre compte a bien était crée.");
+        $test = array('name'=>$data['name'], "body" => "Votre compte a bien été créé.");
         Mail::send('emails.mail', $test, function($message) use ($to_name, $to_email)
         {
             $message->to($to_email, $to_name)
