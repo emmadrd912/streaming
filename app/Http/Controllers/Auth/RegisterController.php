@@ -35,9 +35,8 @@ class RegisterController extends Controller
     protected function redirectTo( ) {
     if (Auth::check() && Auth::user()->isPremium()) {
         return('/payment');
-    }
-    else {
-        return('home');
+    } else {
+      return('catalogfree');
     }
 }
 

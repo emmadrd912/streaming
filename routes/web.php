@@ -23,6 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/add-video', 'HomeController@addvideo');
 
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('/payment', function () { return view('payment') ;});
+  Route::get('payment', 'PaymentController@stripe');
+  Route::post('payment', 'PaymentController@stripePost')->name('stripe.post');
+});
+
 Route::group(['middleware' => ['role:premium|admin|free']], function () {
     Route::resource('profile', 'ProfileController');
 });
