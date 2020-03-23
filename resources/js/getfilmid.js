@@ -11,8 +11,8 @@ function searchfilmbyname(name)
   };
           
   function errorgetfilmidbyname(data) 
-    {
-      console.log("Error callback: " + data);
-    };
+  {
+    console.log("Error callback: " + data);
+  };
 };
 searchfilmbyname('Ad Astra')
