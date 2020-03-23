@@ -16,8 +16,8 @@ class CreateContentTable extends Migration
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->string('contentname');
-            $table->timestamp('Content_added_at')->nullable();
             $table->string('contentid');
+            $table->timestamp('Content_added_at')->nullable();
             $table->timestamps();
         });
     }

@@ -24,16 +24,16 @@ class VideoController extends Controller
      */
     public function create()
     {
-        // public function addvideo() 
+        // public function addvideo()
         // {
         //     request()->validate([
         //         'filmname' => 'required|string',
         //         'video' => 'required|mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi',
         //     ]);
-            
-        //     DB::insert('insert into Content (id, contentname, Content_added_at, contentid) values (?, ?, ?, ?)', [filmname]);        
+
+        //     DB::insert('insert into Content (id, contentname, Content_added_at, contentid) values (?, ?, ?, ?)', [filmname]);
         //     $path = request('video')->store('videos');
-            
+
         //     return $path;
         // }
     }
@@ -52,13 +52,13 @@ class VideoController extends Controller
             ]);
             $content = new Content([
                 'contentname' => $request->get('filmname'),
-                'contentid' => '123'
+                'contentid' => $request->hash,
             ]);
-            
-            // DB::insert('insert into Content (id, contentname, Content_added_at) values (?, ?, ?)', [filmname]);        
+
+            // DB::insert('insert into Content (id, contentname, Content_added_at) values (?, ?, ?)', [filmname]);
             $path = request('video')->store('videos');
             $content -> save();
-            return redirect('HOME')->with('success',  'content added');
+            return redirect('home')->with('success',  'content added');
 
     }
 
