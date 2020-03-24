@@ -7,14 +7,13 @@ function searchfilmbyname(name)
   {
     let stored = JSON.parse(data);
     id = stored.results[0].id;
-    return id
   };
-  console.log(getfilmidbyname())
           
   function errorgetfilmidbyname(data) 
   {
     console.log("Error callback: " + data);
   }
+
 }
 
 function getcomment(id)
