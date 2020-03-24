@@ -1,4 +1,21 @@
 const theMovieDb = require('./TMDB');
+function searchfilmbyname(name)
+{
+  const film = theMovieDb.search.getMovie({"query":name}, getfilmidbyname, errorgetfilmidbyname);
+  
+  function getfilmidbyname(data) 
+  {
+    let stored = JSON.parse(data);
+    id = stored.results[0].id;
+    return id
+  };
+  console.log(getfilmidbyname())
+          
+  function errorgetfilmidbyname(data) 
+  {
+    console.log("Error callback: " + data);
+  }
+}
 
 function getcomment(id)
 {
@@ -66,7 +83,8 @@ function vote(id)
     console.log("Error callback: " + data);
   };
 };
-vote(419704)
-gender(419704)
-releasedate(419704)
-getcomment(419704)
+searchfilmbyname('Ad Astra')
+// vote(id)
+// gender(id)
+// releasedate(id)
+// getcomment(id)
