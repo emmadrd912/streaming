@@ -31,14 +31,13 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = RouteServiceProvider::HOME;
-    protected function redirectTo( ) {
-    if (Auth::check() && Auth::user()->isPremium()) {
-        return('/payment');
-    } else {
-      return('catalogfree');
-    }
-}
+    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected function redirectTo( ) {
+    // if (Auth::check() && Auth::user()->isPremium()) {
+    //     return('home');
+    // } else {
+    //   return('catalogfree');
+    // }
 
     /**
      * Create a new controller instance.
@@ -62,7 +61,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role' => ['required'],
+            // 'role' => ['required'],
         ]);
     }
 
@@ -87,7 +86,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-        ])->assignRole($data['role']);
+        ])->assignRole('free');
 
         // return $user;
     }

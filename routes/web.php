@@ -23,14 +23,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/add-video', 'HomeController@addvideo');
 
-Route::group(['middleware' => 'auth'], function () {
-  Route::get('/payment', function () { return view('payment') ;});
-  Route::get('payment', 'PaymentController@stripe');
-  Route::post('payment', 'PaymentController@stripePost')->name('stripe.post');
-});
-
-Route::group(['middleware' => ['role:premium|admin|free']], function () {
+Route::group(['middleware' => ['role:premium|free']], function () {
     Route::resource('profile', 'ProfileController');
+    Route::get('billing', 'BillingController@index')->name('billing');
+    Route::get('checkout/{plan_id}', 'CheckoutController@checkout')->name('checkout');
+    Route::post('checkout', 'CheckoutController@processCheckout')->name('checkout.process');
+    Route::get('cancel', 'BillingController@cancel')->name('cancel');
+    Route::get('resume', 'BillingController@resume')->name('resume');
+    Route::get('payment-methods/default/{methodId}', 'PaymentMethodController@markDefault')->name('payment-methods.markDefault');
+    Route::resource('payment-methods', 'PaymentMethodController');
+    Route::get('invoice', 'InvoiceController@index');
 });
 
 Route::group(['middleware' => ['role:premium|admin']], function () {

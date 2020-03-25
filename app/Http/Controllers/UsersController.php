@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
+use DB;
 
 class UsersController extends Controller
 {

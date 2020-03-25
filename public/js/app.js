@@ -47764,23 +47764,6 @@ __webpack_require__(/*! ./index */ "./resources/js/index.js"); // window.Vue = r
 //
 
 
-function successCB(data) {
-  // console.log(data);
-  var stored = JSON.parse(data);
-  console.log(stored.results[0].id);
-}
-
-;
-
-function errorCB(data) {
-  console.log("Error callback: " + data);
-}
-
-;
-var film = theMovieDb.search.getMovie({
-  "query": "Fight Club"
-}, successCB, errorCB);
-console.log(film);
 $('#video').submit(function (e) {
   e.preventDefault();
   var form_input = $('#video').serializeArray(); // creates an array of objects
@@ -47972,8 +47955,8 @@ window.addEventListener("load", chargerMedia);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/pi/laravel/streaming/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/pi/laravel/streaming/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/emmadrd912/Desktop/streaming/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/emmadrd912/Desktop/streaming/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),

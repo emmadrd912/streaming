@@ -19,6 +19,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    @yield('styles')
 </head>
 <body>
     <div id="app">
@@ -74,12 +76,18 @@
                             <li class="nav-item">
                                     <a class="nav-link" href="{{ url('catalog') }}"> Catalog </a>
                             </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('billing') }}"> Billing </a>
+                            </li>
                             @endif
                         @endif
                         @if(Auth::check())
                             @if (Auth::user()->isFree())
                             <li class="nav-item">
                                     <a class="nav-link" href="{{ url('catalogfree') }}"> Catalog </a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('billing') }}"> Billing </a>
                             </li>
                             @endif
                         @endif
@@ -102,5 +110,11 @@
             @yield('content')
         </main>
     </div>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+
+    @yield('scripts')
 </body>
 </html>
