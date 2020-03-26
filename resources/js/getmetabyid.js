@@ -105,5 +105,5 @@
 const MovieDB = require('moviedb')('97719463bea4bd4b5902c1a735c0556a');
 
 MovieDB.searchMovie({ query: 'Ad Astra' }, (err, res) => {
-  console.log(res);
+  console.log(res.results[0].id);
 });
