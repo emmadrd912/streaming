@@ -31,13 +31,10 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-    // protected function redirectTo( ) {
-    // if (Auth::check() && Auth::user()->isPremium()) {
-    //     return('home');
-    // } else {
-    //   return('catalogfree');
-    // }
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected function redirectTo( ) {
+        return('/billing');
+    }
 
     /**
      * Create a new controller instance.

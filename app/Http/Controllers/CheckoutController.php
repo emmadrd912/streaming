@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Plan;
 use Stripe\Stripe;
 use App\Country;
+use DB;
 
 class CheckoutController extends Controller
 {
@@ -37,6 +39,8 @@ class CheckoutController extends Controller
                 'city' => $request->input('city'),
                 'postcode' => $request->input('postcode'),
             ]);
+        DB::table('model_has_roles')->where('model_id',Auth::id())->delete();
+        auth()->user()->assignRole('Premium');
         return redirect()->route('billing')->withMessage('Subscribed successfully!');
        } catch (\Exception $e) {
            return redirect()->back()->withError($e->getMessage());

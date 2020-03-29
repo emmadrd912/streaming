@@ -15,7 +15,7 @@
                     @endif
 
                     @if (is_null($currentPlan))
-                      You are now on Free Plan. Choose Plan to upgrade :
+                      You are now on Free Plan. Choose plan to upgrade :
                       </br></br>
                     @endif
 

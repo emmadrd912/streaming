@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Plan;
+use DB;
 // use App\Services\InvoicesService;
 
 class BillingController extends Controller
@@ -33,12 +35,16 @@ class BillingController extends Controller
     public function cancel()
     {
         auth()->user()->subscription('default')->cancel();
+        DB::table('model_has_roles')->where('model_id', Auth::id())->delete();
+        auth()->user()->assignRole('Free');
         return redirect()->route('billing');
     }
 
     public function resume()
     {
         auth()->user()->subscription('default')->resume();
+        DB::table('model_has_roles')->where('model_id',Auth::id())->delete();
+        auth()->user()->assignRole('Premium');
         return redirect()->route('billing');
     }
 }
