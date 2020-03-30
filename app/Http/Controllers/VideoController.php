@@ -45,7 +45,7 @@ class VideoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function moviestore(Request $request)
     {
             $request->validate([
                 'filmname' => 'required|string',
@@ -57,7 +57,7 @@ class VideoController extends Controller
             $filmname = Http::get('https://api.themoviedb.org/3/search/movie?api_key=f3e0583eb3254bc512360eb077868839&query='.$name)
               ->json()['results'];
             
-            $path = request('video')->store('videos');
+            $path = request('video')->moviestore('videos');
             
             $content = new Content([
                 'path' => $path,
