@@ -56,69 +56,23 @@ class VideoController extends Controller
             $name = $request->get('filmname');
             $filmname = Http::get('https://api.themoviedb.org/3/search/movie?api_key=f3e0583eb3254bc512360eb077868839&query='.$name)
               ->json()['results'];
-
+            
+            $path = request('video')->store('videos');
+            
             $content = new Content([
+                'path' => $path,
                 'contentname' => $name,
                 'contentid' => $filmname[0]['id'],
+                'comment' => $filmname[0]['overview'],
+                'vote' => $filmname[0]['vote_average'],
+                'release_date' => $filmname[0]['release_date'],
+
             ]);
 
             // DB::insert('insert into Content (id, contentname, Content_added_at) values (?, ?, ?)', [filmname]);
-            $path = request('video')->store('videos');
+            
             $content -> save();
             return redirect('home')->with('success',  'content added');
-
-            //curl examble to get the id
-
-            // Tableau contenant les options de téléchargement
-            // $options=array(
-            //      CURLOPT_URL            => $url, // Url cible (l'url la page que vous voulez télécharger)
-            //      CURLOPT_RETURNTRANSFER => true, // Retourner le contenu téléchargé dans une chaine (au lieu de l'afficher directement)
-            //      CURLOPT_HEADER         => false // Ne pas inclure l'entête de réponse du serveur dans la chaine retournée
-            // );
-            // Création d'un nouvelle ressource cURL
-            // $CURL=curl_init();
-            //
-            //     // Configuration des options de téléchargement
-            //      curl_setopt_array($CURL,$options);
-            //
-            //     // Exécution de la requête
-            //     $content=curl_exec($CURL);      // Le contenu téléchargé est enregistré dans la variable $content. Libre à vous de l'afficher.
-            //     $decoded = json_decode($content, true);
-            //     $id = $decoded[results][0][id];
-            //     $comment = $decoded[results][0][overview];
-            //     $release_date = $decoded[results][0][release_date];
-            //     $vote = $decoded[results][0][vote_average];
-            //     $gender = "test";
-            //     // Fermeture de la session cURL
-            // curl_close($CURL);
-            // End curl examble to get the id
-
-
-            //curl examble to get the id
-
-            // Complétez $url avec l'url cible (l'url de la page que vous voulez télécharger)
-            // $url="https://api.themoviedb.org/3/search/movie?api_key=f3e0583eb3254bc512360eb077868839&query=Tron";
-
-            // // Tableau contenant les options de téléchargement
-            // $options=array(
-            //     CURLOPT_URL            => $url, // Url cible (l'url la page que vous voulez télécharger)
-            //     CURLOPT_RETURNTRANSFER => true, // Retourner le contenu téléchargé dans une chaine (au lieu de l'afficher directement)
-            //     CURLOPT_HEADER         => false // Ne pas inclure l'entête de réponse du serveur dans la chaine retournée
-            // );
-            // // Création d'un nouvelle ressource cURL
-            // $CURL=curl_init();
-
-            //     // Configuration des options de téléchargement
-            //     curl_setopt_array($CURL,$options);
-
-            //     // Exécution de la requête
-            //     $content=curl_exec($CURL);      // Le contenu téléchargé est enregistré dans la variable $content. Libre à vous de l'afficher.
-            //     $decoded = json_decode($content, true);
-            //     print_r($decoded[results][0][id]);
-            //     // Fermeture de la session cURL
-            // curl_close($CURL);
-            // End curl examble to get the id
-
     }
 
     /**
