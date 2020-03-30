@@ -13,7 +13,7 @@ class CheckoutController extends Controller
 {
     public function checkout($plan_id)
     {
-        Stripe::setApiKey('sk_test_uJYycnkwZTS8ICfRzHNxL51J00pfuxgyz7');
+        Stripe::setApiKey(env('STRIPE_SECRET'));
         $plan = Plan::findOrFail($plan_id);
         $countries = Country::all();
 

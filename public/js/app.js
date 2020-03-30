@@ -47763,32 +47763,6 @@ __webpack_require__(/*! ./index */ "./resources/js/index.js"); // window.Vue = r
 // });
 //
 
-
-$('#video').submit(function (e) {
-  e.preventDefault();
-  var form_input = $('#video').serializeArray(); // creates an array of objects
-  // Add _token object
-
-  form_input.push({
-    name: '_token',
-    value: '{{csrf_token()}}'
-  }); // Add hash object
-
-  form_input.push({
-    name: 'hash',
-    value: 9999
-  });
-  $.ajax({
-    url: 'video',
-    type: "post",
-    data: $.param(form_input),
-    // back to a string!
-    success: function success(data) {//
-    } // and so on
-
-  });
-});
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
