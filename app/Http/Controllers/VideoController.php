@@ -121,7 +121,7 @@ class VideoController extends Controller
     public function destroy($id)
     {
       $content = Content::find($id);
-      Storage::Delete('storage/app/'.$content->$path);
+      Storage::Delete($content->path);
       $content->delete();
 
       return redirect('/contents')->with('success', 'Content has been deleted Successfully');
