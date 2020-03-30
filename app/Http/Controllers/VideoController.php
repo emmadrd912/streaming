@@ -97,7 +97,8 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
-        //
+      $content = Content::find($id);
+      return view('contents.edit', compact('content'));
     }
 
     /**
@@ -109,7 +110,25 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $request->validate([
+        'contentname'=>'required',
+        'contentid'=> 'required|integer',
+        'comment' => 'required|string',
+        'vote' => 'required|numeric|min:0|max:10',
+        'date' => 'required',
+        'upvideo' => 'required|mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi'
+      ]);
+      $content = Content::find($id);
+      $content->contentname = $request->get('contentname');
+      $content->contentid = $request->get('contentid');
+      $content->comment = $request->get('comment');
+      $content->vote = $request->get('vote');
+      $content->release_date = $request->get('date');
+      Storage::Delete($content->path);
+      $content->path = request('upvideo')->store('videos');
+      $content->save();
+
+      return redirect('/contents')->with('success', 'Content has been updated');
     }
 
     /**

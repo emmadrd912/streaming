@@ -19,7 +19,7 @@ class CreateContentTable extends Migration
             $table->string('contentname');
             $table->string('contentid');
             $table->text('comment');
-            $table->string('vote');
+            $table->float('vote');
             $table->date('release_date');
             $table->timestamp('Content_added_at')->nullable();
             $table->timestamps();
