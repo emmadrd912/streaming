@@ -5,26 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-            <div class="card">
                 <div class="card-header">Ajouter un contenu</div>
                 <div class="card-body">
                 <form>
                 <label class="radio-inline"><input type="radio" name="ContentSelect" checked>Film</label>
                 <label class="radio-inline"><input type="radio" name="ContentSelect">Série</label>
                 </form>
-                <form action="{{ route('contents.store')}}" method="POST" enctype="multipart/form-data" id="video">
+                <form action="{{ route('content.store')}}" method="POST" enctype="multipart/form-data" id="video">
                         @csrf
                         <div class="field">
                             <div class="form-group">

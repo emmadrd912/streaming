@@ -99,6 +99,9 @@
                             <li class="nav-item">
                               <a class="nav-link" href="{{ url('users') }}"> Admin panel </a>
                             </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ url('contents') }}"> Video panel </a>
+                            </li>
                             @endif
                         @endif
                     </ul>

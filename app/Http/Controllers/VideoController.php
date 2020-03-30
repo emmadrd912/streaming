@@ -15,7 +15,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+      $contents = Content::all();
+      return view('contents.index', compact('contents'));
     }
 
     /**
@@ -37,6 +38,7 @@ class VideoController extends Controller
 
         //     return $path;
         // }
+        return view('contents.create');
     }
 
     /**
@@ -56,9 +58,9 @@ class VideoController extends Controller
             $name = $request->get('filmname');
             $filmname = Http::get('https://api.themoviedb.org/3/search/movie?api_key=f3e0583eb3254bc512360eb077868839&query='.$name)
               ->json()['results'];
-            
-            $path = request('video')->moviestore('videos');
-            
+
+            $path = request('video')->store('videos');
+
             $content = new Content([
                 'path' => $path,
                 'contentname' => $name,
@@ -70,9 +72,9 @@ class VideoController extends Controller
             ]);
 
             // DB::insert('insert into Content (id, contentname, Content_added_at) values (?, ?, ?)', [filmname]);
-            
+
             $content -> save();
-            return redirect('home')->with('success',  'content added');
+            return redirect('/contents')->with('success',  'content added');
     }
 
     /**
@@ -117,6 +119,9 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $content = Content::find($id);
+      $content->delete();
+
+      return redirect('/contents')->with('success', 'Content has been deleted Successfully');
     }
 }

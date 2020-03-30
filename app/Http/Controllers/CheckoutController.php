@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Plan;
+use App\User;
 use Stripe\Stripe;
 use App\Country;
 use DB;
@@ -46,4 +47,21 @@ class CheckoutController extends Controller
            return redirect()->back()->withError($e->getMessage());
        }
     }
+
+    public function invoices()
+  {
+      try {
+          Stripe::setApiKey(env('STRIPE_SECRET'));
+
+          $user = User::where('id', Auth::id())->get();
+
+          $invoices = $user->invoices();
+
+          return view('invoices', compact('invoices'));
+
+      } catch (\Exception $ex) {
+          return $ex->getMessage();
+      }
+
+  }
 }
