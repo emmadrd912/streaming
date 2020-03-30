@@ -2,6 +2,7 @@ import Helpers from "./Helpers.js";
 import Serie from "./Classes/Serie.js";
 import Film from "./Classes/Film.js";
 
+
 const apiKey = "97719463bea4bd4b5902c1a735c0556a";
 
 const traiterMedia = (data, type) => {
