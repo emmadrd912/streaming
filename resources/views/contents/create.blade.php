@@ -44,7 +44,15 @@
                                 <label for="serie_name">Serie name :</label>
                                 <input type='text' class="form-control" name="seriename" placeholder="Name of the serie"></input>
                             </div>
+                            <div class="form-group">
+                                <label for="serie_name">Episode name :</label>
+                                <input type='text' class="form-control" name="episodename" placeholder="Name of the episode"></input>
+                            </div>
                         </div>
+                        <!-- <form>
+                            <label for="quantity">Number of episode you want to add :</label>
+                            <input type="number" id="quantity" name="quantity" min="0" max="100" step="1" value="1">
+                        </form> -->
                         <div class="field">
                             <div class="control">
                                 <input class="input" type="file" name="serie">
