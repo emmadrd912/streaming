@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Content;
+use Illuminate\Support\Facades\Storage;
 
 class VideoController extends Controller
 {
@@ -120,6 +121,7 @@ class VideoController extends Controller
     public function destroy($id)
     {
       $content = Content::find($id);
+      Storage::Delete('storage/app/'.$content->$path);
       $content->delete();
 
       return redirect('/contents')->with('success', 'Content has been deleted Successfully');

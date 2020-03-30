@@ -24,7 +24,7 @@
                 <label class="radio-inline"><input type="radio" name="ContentSelect" checked>Film</label>
                 <label class="radio-inline"><input type="radio" name="ContentSelect">Série</label>
                 </form>
-                <form action="{{ route('contents.store')}}" method="POST" enctype="multipart/form-data" id="video">
+                <form action="{{ route('contents.moviestore')}}" method="POST" enctype="multipart/form-data" id="video">
                         @csrf
                         <div class="field">
                             <div class="form-group">
