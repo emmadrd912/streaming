@@ -34,6 +34,7 @@ Route::group(['middleware' => ['role:premium|free']], function () {
     Route::resource('payment-methods', 'PaymentMethodController');
     // Route::get('/invoices', function () { return view('invoices'); });
     Route::get('invoices', 'CheckoutController@invoices');
+    Route::get('account/invoices/{invoice}', 'CheckoutController@downloadInvoice');
     // Route::get('user/invoice/{invoice}', function (Request $request, $invoiceId) {
     //   return $request->user()->downloadInvoice($invoiceId, [
     //       'vendor'  => 'Your Company',

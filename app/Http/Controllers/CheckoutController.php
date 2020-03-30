@@ -50,18 +50,15 @@ class CheckoutController extends Controller
 
     public function invoices()
   {
-      try {
-          Stripe::setApiKey(env('STRIPE_SECRET'));
+    $invoices = auth()->user()->invoices();
+    return view('invoices', compact('invoices'));
+  }
 
-          $user = User::where('id', Auth::id())->get();
-
-          $invoices = $user->invoices();
-
-          return view('invoices', compact('invoices'));
-
-      } catch (\Exception $ex) {
-          return $ex->getMessage();
-      }
-
+  public function downloadInvoice($invoiceId)
+  {
+      return Auth::user()->downloadInvoice($invoiceId, [
+          'vendor'  => 'Flixnet',
+          'product' => 'Monthly Subscription Premium'
+      ]);
   }
 }

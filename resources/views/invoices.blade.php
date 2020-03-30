@@ -1,21 +1,39 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-    </head>
-    <body>
-      <table>
-          @foreach ($invoices as $invoice)
-              <tr>
-                  <td>{{ $invoice->date()->toFormattedDateString() }}</td>
-                  <td>{{ $invoice->total() }}</td>
-                  <!-- <td><a href="/user/invoice/{{ $invoice->id }}">Download</a></td> -->
-              </tr>
-          @endforeach
-      </table>
-    </body>
-</html>
+@section('content')
+<div class="container">
+  <style>
+    .uper {
+      margin-top: 40px;
+    }
+  </style>
+  <br/>
+  <div class="uper">
+    @if(session()->get('success'))
+      <div class="alert alert-success">
+        {{ session()->get('success') }}
+      </div><br />
+    @endif
+    <table class="table table-bordered">
+      <thead>
+          <tr>
+            <th><strong> Date </th>
+            <th><strong> Price </th>
+            <th colspan="2"><strong>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+        @foreach ($invoices as $invoice)
+            <tr>
+                <td>{{ $invoice->date()->toFormattedDateString() }}</td>
+                <td>{{ $invoice->total() }}</td>
+                <td> <a href="account/invoices/{{ $invoice->id }}">Download</a> </td>
+            </tr>
+        @endforeach
+      </tbody>
+    </table>
+  <div>
+</div>
+</div>
+</div>
+@endsection
