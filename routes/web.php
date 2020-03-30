@@ -32,13 +32,14 @@ Route::group(['middleware' => ['role:premium|free']], function () {
     Route::get('resume', 'BillingController@resume')->name('resume');
     Route::get('payment-methods/default/{methodId}', 'PaymentMethodController@markDefault')->name('payment-methods.markDefault');
     Route::resource('payment-methods', 'PaymentMethodController');
-    Route::get('/invoices', 'CheckoutController@invoices');
-    Route::get('user/invoice/{invoice}', function (Request $request, $invoiceId) {
-      return $request->user()->downloadInvoice($invoiceId, [
-          'vendor'  => 'Your Company',
-          'product' => 'Your Product',
-      ]);
-    });
+    // Route::get('/invoices', function () { return view('invoices'); });
+    Route::get('invoices', 'CheckoutController@invoices');
+    // Route::get('user/invoice/{invoice}', function (Request $request, $invoiceId) {
+    //   return $request->user()->downloadInvoice($invoiceId, [
+    //       'vendor'  => 'Your Company',
+    //       'product' => 'Your Product',
+    //   ]);
+    // });
 });
 
 Route::group(['middleware' => ['role:premium|admin|free']], function () {
