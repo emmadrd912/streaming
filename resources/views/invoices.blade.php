@@ -8,6 +8,7 @@
     }
   </style>
   <br/>
+  <h1> Invoices </h1>
   <div class="uper">
     @if(session()->get('success'))
       <div class="alert alert-success">
