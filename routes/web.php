@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/add-video', 'HomeController@addvideo');
 
 Route::group(['middleware' => ['role:premium|free']], function () {
-    Route::resource('profile', 'ProfileController');
     Route::get('billing', 'BillingController@index')->name('billing');
     Route::get('checkout/{plan_id}', 'CheckoutController@checkout')->name('checkout');
     Route::post('checkout', 'CheckoutController@processCheckout')->name('checkout.process');
@@ -32,7 +32,17 @@ Route::group(['middleware' => ['role:premium|free']], function () {
     Route::get('resume', 'BillingController@resume')->name('resume');
     Route::get('payment-methods/default/{methodId}', 'PaymentMethodController@markDefault')->name('payment-methods.markDefault');
     Route::resource('payment-methods', 'PaymentMethodController');
-    Route::get('invoice', 'InvoiceController@index');
+    Route::get('/invoices', 'CheckoutController@invoices');
+    Route::get('user/invoice/{invoice}', function (Request $request, $invoiceId) {
+      return $request->user()->downloadInvoice($invoiceId, [
+          'vendor'  => 'Your Company',
+          'product' => 'Your Product',
+      ]);
+    });
+});
+
+Route::group(['middleware' => ['role:premium|admin|free']], function () {
+    Route::resource('profile', 'ProfileController');
 });
 
 Route::group(['middleware' => ['role:premium|admin']], function () {
