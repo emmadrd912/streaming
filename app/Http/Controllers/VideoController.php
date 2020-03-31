@@ -20,6 +20,7 @@ class VideoController extends Controller
       return view('contents.index', compact('contents'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -72,10 +73,57 @@ class VideoController extends Controller
 
             ]);
 
+
             // DB::insert('insert into Content (id, contentname, Content_added_at) values (?, ?, ?)', [filmname]);
 
             $content -> save();
             return redirect('/contents')->with('success',  'content added');
+    }
+
+    public function seriestore(Request $request)
+    {
+            $request->validate([
+                'serie_name' => 'required|string',
+                'serie' => 'required|mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi',
+            ]);
+
+            $name = $request->get('serie_name');
+            dd($name);
+            $serieinfo = Http::get('https://api.themoviedb.org/3/search/tv?api_key=f3e0583eb3254bc512360eb077868839&query='.$name)
+            ->json()['results'];
+
+            $idserie = $serieinfo[0]['id'];
+
+            // $serieinfo2 = Http::get("https://api.themoviedb.org/3/tv/{$id}?api_key=f3e0583eb3254bc512360eb077868839")
+            // ->json()['seasons'];
+
+            $season_number = $request->get('number_season');
+            $episode_number = $request->get('number_episode');
+
+            $episode = Http::get("https://api.themoviedb.org/3/tv/{$idserie}/season/{$season_number}/episode/{$episode_number}?api_key=f3e0583eb3254bc512360eb077868839");
+
+          //////////////////////////////////////////////////////////////////:
+
+            $path = request('serie')->store('series');
+
+            dump($episode['name']);
+
+            $content = new Content([
+                'path' => $path,
+                'episode_name' => $episode['name'],
+                'episode_id' => $episode['id'],
+                'episode_season' => $episode['season_number'],
+                'serie_name' => $name,
+                'comment' => $episode['overview'],
+                'vote' => $episode['vote_average'],
+                'release_date' => $episode['air_date']
+
+            ]);
+
+            // DB::insert('insert into Content (id, contentname, Content_added_at) values (?, ?, ?)', [filmname]);
+
+            $content -> save();
+            return redirect('/contents')->with('success',  'Serie added');
     }
 
     /**

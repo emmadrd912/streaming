@@ -37,22 +37,26 @@
                 </div>
 
                 <div id=seriediv>
-                    <form action="{{ route('contents.moviestore')}}" method="POST" enctype="multipart/form-data" id="serie">
+                    <form action="{{ route('contents.seriestore')}}" enctype="multipart/form-data" method="POST" id="serie">
                         @csrf
                         <div class="field">
                             <div class="form-group">
                                 <label for="serie_name">Serie name :</label>
-                                <input type='text' class="form-control" name="seriename" placeholder="Name of the serie"></input>
-                            </div>
-                            <div class="form-group">
-                                <label for="serie_name">Episode name :</label>
-                                <input type='text' class="form-control" name="episodename" placeholder="Name of the episode"></input>
+                                <input type='text' class="form-control" name="serie_name" placeholder="Name of the serie"></input>
                             </div>
                         </div>
-                        <!-- <form>
-                            <label for="quantity">Number of episode you want to add :</label>
-                            <input type="number" id="quantity" name="quantity" min="0" max="100" step="1" value="1">
-                        </form> -->
+                        <div class="field">
+                          <div class="form-group">
+                              <label for="quantity">Number of season you want to add :</label>
+                              <input type="number" id="quantity" name="number_season" min="0" max="100" step="1" value="1">
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="form-group">
+                              <label for="quantity">Number of episode you want to add :</label>
+                              <input type="number" id="quantity" name="number_episode" min="0" max="100" step="1" value="1">
+                          </div>
+                        </div>
                         <div class="field">
                             <div class="control">
                                 <input class="input" type="file" name="serie">
@@ -78,14 +82,14 @@ document.getElementById('seriediv').style.display='none';
 function magueule(value)
 {
     if(value=='film')
-    { 
+    {
         document.getElementById('videodiv').style.display='block';
-        document.getElementById('seriediv').style.display='none';  
+        document.getElementById('seriediv').style.display='none';
     }
-    else if(value=='serie') 
-    { 
+    else if(value=='serie')
+    {
         document.getElementById('seriediv').style.display='block';
-        document.getElementById('videodiv').style.display='none'; 
+        document.getElementById('videodiv').style.display='none';
     }
 }
 </script>

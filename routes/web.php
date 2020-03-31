@@ -53,6 +53,7 @@ Route::group(['middleware' => ['role:admin']], function () {
     // Route::resource('content','VideoController');
     Route::resource('contents', 'VideoController');
     Route::post('video', 'VideoController@moviestore')->name('contents.moviestore');
+    Route::post('serie', 'VideoController@seriestore')->name('contents.seriestore');
 });
 
 Route::group(['middleware' => ['role:free']], function () {
