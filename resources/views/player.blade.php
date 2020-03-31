@@ -4,7 +4,7 @@
 <div class="container">
 <video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player">
                 <!-- Video files -->
-                <source src="{{ asset('storage/') }}" type="video/mp4">
+                <source src="{{ asset('storage/'.$data->path) }}" type="video/mp4">
 
 
                 <!-- Caption files -->
@@ -14,7 +14,6 @@
 
                 <!-- Fallback for browsers that don't support the <video> element -->
             </video>
-            <p> {{ $data->path}} </p>
         
 </div>
 <script src="https://cdn.plyr.io/3.5.10/plyr.js"></script>
