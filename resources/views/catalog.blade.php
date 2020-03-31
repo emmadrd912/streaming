@@ -7,7 +7,7 @@
   <div class="row">
     @foreach ($contents as $content)
     <div style="margin:1%;">
-      <a href="">
+      <a href="{{ route('film.go',$content->id)}}">
         <img src="https://image.tmdb.org/t/p/w154{{ $content->poster_path}}" style=""/>
       </a>
     </div>

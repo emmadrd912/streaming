@@ -63,7 +63,7 @@ class VideoController extends Controller
             $filmname = Http::get('https://api.themoviedb.org/3/search/movie?api_key=f3e0583eb3254bc512360eb077868839&query='.$name)
               ->json()['results'];
 
-            $path = request('video')->store('videos');
+            $path = request('video')->store('videos', 'public');
 
             $content = new Content([
                 'path' => $path,
@@ -143,7 +143,7 @@ class VideoController extends Controller
       $content->vote = $request->get('vote');
       $content->release_date = $request->get('date');
       Storage::Delete($content->path);
-      $content->path = request('upvideo')->store('videos');
+      $content->path = request('upvideo')->store('videos', 'public');
       $content->save();
 
       return redirect('/contents')->with('success', 'Content has been updated');
@@ -178,7 +178,7 @@ class VideoController extends Controller
       $serie->vote = $request->get('vote');
       $serie->release_date = $request->get('date');
       Storage::Delete($serie->path);
-      $serie->path = request('upserie')->store('series');
+      $serie->path = request('upserie')->store('series', 'public');
       $serie->save();
 
       return redirect('/contents')->with('success', 'Serie has been updated');
@@ -213,7 +213,7 @@ class VideoController extends Controller
 
            //////////////////////////////////////////////////////////////////:
 
-             $path = request('serie')->store('series');
+             $path = request('serie')->store('series', 'public');
 
              $serie = new Serie([
                  'path' => $path,

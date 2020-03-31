@@ -47,6 +47,7 @@ Route::group(['middleware' => ['role:premium']], function () {
 
 Route::group(['middleware' => ['role:premium|admin']], function () {
     Route::resource('catalog', 'CatalogController');
+    Route::get('player/{id}', 'PlayerController@transmitid')->name('film.go');
 });
 
 Route::group(['middleware' => ['role:admin']], function () {
