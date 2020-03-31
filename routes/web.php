@@ -46,7 +46,7 @@ Route::group(['middleware' => ['role:premium']], function () {
 });
 
 Route::group(['middleware' => ['role:premium|admin']], function () {
-    Route::get('/catalog', function () { return view('catalog'); });
+    Route::resource('catalog', 'CatalogController');
 });
 
 Route::group(['middleware' => ['role:admin']], function () {
