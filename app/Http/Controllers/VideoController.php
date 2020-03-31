@@ -224,7 +224,9 @@ class VideoController extends Controller
                  'serie_name' => $name,
                  'comment' => $episode['overview'],
                  'vote' => $episode['vote_average'],
-                 'release_date' => $episode['air_date']
+                 'release_date' => $episode['air_date'],
+                 'backdrop_path' => $serieinfo[0]['backdrop_path'],
+                 'still_path' => $episode['still_path'],
 
              ]);
 

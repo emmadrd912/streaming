@@ -16,5 +16,14 @@
   <br/>
   <h2> Série </h2>
   <br/>
+  <div class="row">
+    @foreach ($series as $serie)
+    <div style="margin:1%;">
+      <a href="{{ route('serie.go',$serie->id)}}">
+        <img src="https://image.tmdb.org/t/p/w154{{ $serie->still_path}}" style=""/>
+      </a>
+    </div>
+    @endforeach
+  </div>
 </div>
 @endsection

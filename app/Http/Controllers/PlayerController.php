@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Content;
+use App\Serie;
 
 class PlayerController extends Controller
 {
@@ -47,6 +48,18 @@ class PlayerController extends Controller
     public function transmitId($id)
     {
         $data = Content::find($id);
+        return view('player', compact('data'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function transmitserie($id)
+    {
+        $data = Serie::find($id);
         return view('player', compact('data'));
     }
 
