@@ -23,8 +23,8 @@ class CreateSerieTable extends Migration
             $table->text('comment');
             $table->float('vote');
             $table->date('release_date');
-            $table->string('still_path');
-            $table->string('backdrop_path');
+            $table->string('still_path')->nullable();
+            $table->string('backdrop_path')->nullable();
             $table->timestamp('Content_added_at')->nullable();
             $table->timestamps();
         });
