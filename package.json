@@ -27,6 +27,7 @@
         "child_process": "^1.0.2",
         "fs": "0.0.1-security",
         "googleapis": "^48.0.0",
+        "plyr": "^3.5.10",
         "xmlhttprequest": "^1.8.0"
     }
 }
