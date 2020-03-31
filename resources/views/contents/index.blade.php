@@ -42,6 +42,34 @@
           @endforeach
       </tbody>
     </table>
+    <table class="table table-bordered">
+      <thead>
+          <tr>
+            <!-- <td>ID</td> -->
+            <th><strong>Serie </th>
+            <th><strong>Season</th>
+            <th><strong>Episode</th>
+            <th colspan="2"><strong>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          @foreach($series as $serie)
+          <tr>
+              <!-- <td>{{$content->id}}</td> -->
+              <td data-label="NAME">{{$serie->serie_name}}</td>
+              <td data-label="ID">{{$serie->episode_season}}</td>
+              <td>{{$serie->episode_name}}</td>
+              <td data-label="ACTION"><a href="{{ route('contents.editserie',$serie->id)}}" class="btn btn-primary">Edit</a></td>
+              <td>
+                  <form action="{{ route('contents.destroyserie', $serie->id)}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                  </form>
+              </td>
+          </tr>
+          @endforeach
+      </tbody>
+    </table>
   <div>
 </div>
 </div>

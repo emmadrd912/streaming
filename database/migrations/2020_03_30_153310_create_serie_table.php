@@ -13,7 +13,7 @@ class CreateSerieTable extends Migration
      */
     public function up()
     {
-        Schema::create('serie_contents', function (Blueprint $table) {
+        Schema::create('series', function (Blueprint $table) {
             $table->id();
             $table->text('path');
             $table->string('episode_name');
@@ -35,6 +35,6 @@ class CreateSerieTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('serie_contents');
+        Schema::dropIfExists('series');
     }
 }
