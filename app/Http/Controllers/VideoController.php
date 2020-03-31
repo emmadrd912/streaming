@@ -73,6 +73,7 @@ class VideoController extends Controller
                 'vote' => $filmname[0]['vote_average'],
                 'release_date' => $filmname[0]['release_date'],
                 'poster_path' => $filmname[0]['poster_path'],
+                'backdrop_path' => $filmname[0]['backdrop_path'],
 
             ]);
 

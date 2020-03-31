@@ -44,11 +44,10 @@ class PlayerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function transmitid($id)
+    public function transmitId($id)
     {
         $data = Content::find($id);
-        return view("player", compact('data'));
-        
+        return view('player', compact('data'));
     }
 
     /**

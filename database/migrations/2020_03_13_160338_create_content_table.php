@@ -22,6 +22,7 @@ class CreateContentTable extends Migration
             $table->float('vote');
             $table->date('release_date');
             $table->string('poster_path');
+            $table->string('backdrop_path');
             $table->timestamp('Content_added_at')->nullable();
             $table->timestamps();
         });
