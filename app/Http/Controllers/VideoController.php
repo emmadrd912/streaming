@@ -107,6 +107,18 @@ class VideoController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function editserie($id)
+    {
+      $serie = Serie::find($id);
+      return view('contents.editserie', compact('serie'));
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -134,6 +146,41 @@ class VideoController extends Controller
       $content->save();
 
       return redirect('/contents')->with('success', 'Content has been updated');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateserie(Request $request, $id)
+    {
+      $request->validate([
+        'serie_name'=>'required',
+        'episode_season'=>'required|integer',
+        'episode_id'=>'required|integer',
+        'episode_name'=>'required',
+        'comment' => 'required|string',
+        'vote' => 'required|numeric|min:0|max:10',
+        'date' => 'required',
+        'upserie' => 'required|mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi'
+      ]);
+
+      $serie = Serie::find($id);
+      $serie->serie_name = $request->get('serie_name');
+      $serie->episode_season = $request->get('episode_season');
+      $serie->episode_id = $request->get('episode_id');
+      $serie->episode_name = $request->get('episode_name');
+      $serie->comment = $request->get('comment');
+      $serie->vote = $request->get('vote');
+      $serie->release_date = $request->get('date');
+      Storage::Delete($serie->path);
+      $serie->path = request('upserie')->store('series');
+      $serie->save();
+
+      return redirect('/contents')->with('success', 'Serie has been updated');
     }
 
     /**

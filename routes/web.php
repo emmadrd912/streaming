@@ -54,8 +54,9 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::resource('contents', 'VideoController');
     Route::post('video', 'VideoController@moviestore')->name('contents.moviestore');
     Route::post('serie', 'VideoController@seriestore')->name('contents.seriestore');
-    Route::post('destroy', 'VideoController@destroyserie')->name('contents.destroyserie');
-    Route::post('edit', 'VideoController@editserie')->name('contents.editserie');
+    Route::post('destroy/{id}', 'VideoController@destroyserie')->name('contents.destroyserie');
+    Route::post('edit/{id}', 'VideoController@editserie')->name('contents.editserie');
+    Route::post('update/{id}', 'VideoController@updateserie')->name('contents.updateserie');
 });
 
 Route::group(['middleware' => ['role:free']], function () {

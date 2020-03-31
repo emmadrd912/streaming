@@ -55,11 +55,15 @@
       <tbody>
           @foreach($series as $serie)
           <tr>
-              <!-- <td>{{$content->id}}</td> -->
               <td data-label="NAME">{{$serie->serie_name}}</td>
               <td data-label="ID">{{$serie->episode_season}}</td>
               <td>{{$serie->episode_name}}</td>
-              <td data-label="ACTION"><a href="{{ route('contents.editserie',$serie->id)}}" class="btn btn-primary">Edit</a></td>
+              <td>
+                  <form action="{{ route('contents.editserie',$serie->id)}}" method="post">
+                    @csrf
+                    <button class="btn btn-primary" type="submit"> Edit</button>
+                  </form>
+              </td>
               <td>
                   <form action="{{ route('contents.destroyserie', $serie->id)}}" method="post">
                     @csrf
