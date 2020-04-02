@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
+use DB;
 
 class LoginController extends Controller
 {
@@ -22,6 +23,16 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    // public function checksub() {
+    //   if (Auth::user()->subscribed('default')) {
+    //     DB::table('model_has_roles')->where('model_id',Auth::id())->delete();
+    //     auth()->user()->assignRole('Premium');
+    //   } else {
+    //     DB::table('model_has_roles')->where('model_id',Auth::id())->delete();
+    //     auth()->user()->assignRole('Free');
+    //   }
+    // }
+
     /**
      * Where to redirect users after login.
      *
@@ -29,6 +40,7 @@ class LoginController extends Controller
      */
     // protected $redirectTo = RouteServiceProvider::CATALOG;
     protected function redirectTo( ) {
+      // $this->checksub();
       if (Auth::check() && Auth::user()->isFree()) {
           return('/catalogfree');
       } else {

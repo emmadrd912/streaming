@@ -35,8 +35,8 @@ class BillingController extends Controller
     public function cancel()
     {
         auth()->user()->subscription('default')->cancel();
-        DB::table('model_has_roles')->where('model_id', Auth::id())->delete();
-        auth()->user()->assignRole('Free');
+        // DB::table('model_has_roles')->where('model_id', Auth::id())->delete();
+        // auth()->user()->assignRole('Free');
         return redirect()->route('billing');
     }
 

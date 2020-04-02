@@ -26,9 +26,27 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'Flixnet') }}
-                </a>
+                @if(Auth::check())
+                    @if (Auth::user()->isPremium())
+                      <a class="navbar-brand" href="{{ url('/catalog') }}">
+                          {{ config('app.name', 'Flixnet') }}
+                      </a>
+                    @endif
+                @endif
+                @if(Auth::check())
+                    @if (Auth::user()->isAdmin())
+                      <a class="navbar-brand" href="{{ url('/catalog') }}">
+                          {{ config('app.name', 'Flixnet') }}
+                      </a>
+                    @endif
+                @endif
+                @if(Auth::check())
+                    @if (Auth::user()->isFree())
+                      <a class="navbar-brand" href="{{ url('/catalogfree') }}">
+                          {{ config('app.name', 'Flixnet') }}
+                      </a>
+                    @endif
+                @endif
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -59,11 +77,6 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url('profile') }}"> My account </a>
-                                    @if(Auth::check())
-                                        @if (Auth::user()->isPremium())
-                                          <a class="dropdown-item" href="{{ url('invoices') }}"> Invoices </a>
-                                        @endif
-                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -83,6 +96,9 @@
                             </li>
                             <li class="nav-item">
                                     <a class="nav-link" href="{{ route('billing') }}"> Billing </a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('invoices') }}"> Invoices </a>
                             </li>
                             @endif
                         @endif

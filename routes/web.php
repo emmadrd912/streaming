@@ -22,9 +22,10 @@ Route::get('/player', function () {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/add-video', 'HomeController@addvideo');
+Route::get('login/checksub', 'Auth/LoginController@checksub');
 
 Route::group(['middleware' => ['role:premium|free']], function () {
     Route::get('billing', 'BillingController@index')->name('billing');
