@@ -65,6 +65,10 @@ Route::group(['middleware' => ['role:admin']], function () {
 });
 
 Route::group(['middleware' => ['role:free']], function () {
-    Route::get('/catalogfree', function () { return view('catalogfree'); });
+    Route::resource('catalogfree', 'CatalogController');
+    Route::get('catalogfree', 'CatalogController@random');
+    Route::get('player/{id}', 'PlayerController@transmitid')->name('film.go');
+    Route::get('players/{id}', 'PlayerController@transmitserie')->name('serie.go');
+
 });
 Route::get('/sendmail', 'MailController@sendmail');

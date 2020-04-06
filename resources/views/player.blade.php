@@ -2,7 +2,7 @@
 @section('content')
 <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
 <div class="container">
-<video controls crossorigin playsinline poster="https://image.tmdb.org/t/p/w1280{{$data->backdrop_path}}" id="player">
+<video controls buffered preload="none" poster="https://image.tmdb.org/t/p/w1280{{$data->backdrop_path}}" id="player">
                 <!-- Video files -->
                 <source src="{{ asset('storage/'.$data->path) }}" type="video/mp4">
 
@@ -18,7 +18,9 @@
 </div>
 <script src="https://cdn.plyr.io/3.5.10/plyr.js"></script>
 <script>
+document.addEventListener('DOMContentLoaded', () => { 
   const player = new Plyr('#player');
   window.player = player;
+});
 </script>
 @endsection

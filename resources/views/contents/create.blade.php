@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -41,19 +43,19 @@
                         @csrf
                         <div class="field">
                             <div class="form-group">
-                                <label for="serie_name">Serie name :</label>
+                                <label for="serie_name">Name of the serie :</label>
                                 <input type='text' class="form-control" name="serie_name" placeholder="Name of the serie"></input>
                             </div>
                         </div>
                         <div class="field">
                           <div class="form-group">
-                              <label for="quantity">Number of season you want to add :</label>
+                              <label for="quantity">Number of the season you want to add :</label>
                               <input type="number" id="quantity" name="number_season" min="0" max="100" step="1" value="1">
                           </div>
                         </div>
                         <div class="field">
                           <div class="form-group">
-                              <label for="quantity">Number of episode you want to add :</label>
+                              <label for="quantity">Number of the episode you want to add :</label>
                               <input type="number" id="quantity" name="number_episode" min="0" max="100" step="1" value="1">
                           </div>
                         </div>
@@ -76,6 +78,7 @@
         </div>
     </div>
 </div>
+
 <script>
 document.getElementById('videodiv').style.display='block';
 document.getElementById('seriediv').style.display='none';

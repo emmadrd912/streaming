@@ -20,6 +20,15 @@ class CatalogController extends Controller
       return view('catalog', compact('contents','series'));
     }
 
+    public function random()
+    {
+    //   $random_contents = Content::select("select id from contents order by rand() limit 2");
+    //   $random_series = Serie::select("select id from series order by rand() limit 1");
+      $random_contents = Content::all()->random(2);
+      $random_series = Serie::all()->random(1);
+      return view('catalogfree', compact('random_contents','random_series'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
