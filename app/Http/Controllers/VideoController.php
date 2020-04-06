@@ -246,7 +246,8 @@ class VideoController extends Controller
     public function destroy($id)
     {
       $content = Content::find($id);
-      Storage::Delete($content->path);
+      // Storage::Delete($content->path);
+      unlink(public_path('storage/'.$content->path));
       $content->delete();
 
       return redirect('/contents')->with('success', 'Content has been deleted Successfully');
@@ -261,7 +262,8 @@ class VideoController extends Controller
     public function destroyserie($id)
     {
       $serie = Serie::find($id);
-      Storage::Delete($serie->path);
+      // Storage::Delete($serie->path);
+      unlink(public_path('storage/'.$serie->path));
       $serie->delete();
 
       return redirect('/contents')->with('success', 'Serie has been deleted Successfully');
