@@ -126,6 +126,12 @@
                             @endif
                         @endif
                     </ul>
+                    <div style="margin-left:3%;">
+                      <form class="form-inline" action="/search" method="get">
+                        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                    </div>
                 </div>
             </div>
         </nav>

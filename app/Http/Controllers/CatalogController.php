@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Content;
 use App\Serie;
+use DB;
 
 class CatalogController extends Controller
 {
@@ -38,6 +39,19 @@ class CatalogController extends Controller
     {
         //
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+      public function search(Request $request) {
+        $search = $request->get('search');
+        $contents = DB::table('contents')->where('contentname', 'like', '%'.$search.'%')->get();
+        $series = DB::table('series')->where('serie_name', 'like', '%'.$search.'%')->get();
+        return view('search', compact('contents','series'));
+      }
 
     /**
      * Store a newly created resource in storage.
