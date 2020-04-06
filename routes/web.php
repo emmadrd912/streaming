@@ -39,6 +39,8 @@ Route::group(['middleware' => ['role:premium|free']], function () {
 
 Route::group(['middleware' => ['role:premium|admin|free']], function () {
     Route::resource('profile', 'ProfileController');
+    Route::get('player/{id}', 'PlayerController@transmitid')->name('film.go');
+    Route::get('players/{id}', 'PlayerController@transmitserie')->name('serie.go');
 });
 
 Route::group(['middleware' => ['role:premium']], function () {
@@ -48,8 +50,7 @@ Route::group(['middleware' => ['role:premium']], function () {
 
 Route::group(['middleware' => ['role:premium|admin']], function () {
     Route::resource('catalog', 'CatalogController');
-    Route::get('player/{id}', 'PlayerController@transmitid')->name('film.go');
-    Route::get('players/{id}', 'PlayerController@transmitserie')->name('serie.go');
+
 });
 
 Route::group(['middleware' => ['role:admin']], function () {
@@ -67,8 +68,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 Route::group(['middleware' => ['role:free']], function () {
     Route::resource('catalogfree', 'CatalogController');
     Route::get('catalogfree', 'CatalogController@random');
-    Route::get('player/{id}', 'PlayerController@transmitid')->name('film.go');
-    Route::get('players/{id}', 'PlayerController@transmitserie')->name('serie.go');
+
 
 });
 Route::get('/sendmail', 'MailController@sendmail');

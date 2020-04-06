@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Content;
 use App\Serie;
+use App\Catalogfree;
+use DB;
 
 class CatalogController extends Controller
 {
@@ -19,13 +21,41 @@ class CatalogController extends Controller
       $series = Serie::all();
       return view('catalog', compact('contents','series'));
     }
-
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
     public function random()
     {
-    //   $random_contents = Content::select("select id from contents order by rand() limit 2");
-    //   $random_series = Serie::select("select id from series order by rand() limit 1");
-      $random_contents = Content::all()->random(2);
-      $random_series = Serie::all()->random(1);
+        $date = catalogfree::where('updated at');
+        //$diff = time() - strtotime($date); 
+       // if($diff >= 86400 || $diff == NULL)
+        //{
+            $random_contents = Content::all()->random(2);
+            $first_random_content = $random_contents->toArray()[0]['contentid'];
+            $second_random_content = $random_contents->toArray()[1]['contentid'];
+            $random_series = Serie::all()->random(1);
+            $first_random_series = $random_series->toArray()[0]['episode_id'];
+
+            DB::table('catalogfrees')->updateOrInsert(
+                ['id'=> 1],
+                ['contentid' => $first_random_content]);
+            DB::table('catalogfrees')->updateOrInsert(
+                ['id'=> 2],
+                ['contentid' => $second_random_content]);
+            DB::table('catalogfrees')->updateOrInsert(
+                    ['id'=> 3],
+                    ['contentid' => $first_random_series]);
+            // $catalogfrees->contentid=$first_random_content;
+            // $catalogfrees->save();  
+
+        //}
+
+
+    //   $random_series = Serie::all()->random(1);
       return view('catalogfree', compact('random_contents','random_series'));
     }
 
