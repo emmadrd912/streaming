@@ -15,6 +15,8 @@
         {{ session()->get('success') }}
       </div><br />
     @endif
+    <h3> Film :</h3>
+    <br/>
     <table class="table table-bordered">
       <thead>
           <tr>
@@ -42,6 +44,9 @@
           @endforeach
       </tbody>
     </table>
+    <br/>
+    <h3> Série :</h3>
+    <br/>
     <table class="table table-bordered">
       <thead>
           <tr>

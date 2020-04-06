@@ -10,8 +10,14 @@
                 <div class="card-header">Ajouter un contenu</div>
                 <div class="card-body">
                 <form>
-                <label class="radio-inline"><input type="radio" onclick="magueule('film');" name="select" id=filmcheck checked>Film</label>
-                <label class="radio-inline"><input type="radio" onclick="magueule('serie');" name="select" id=seriecheck >Série</label>
+                  <label class="radio-inline">
+                    <input type="radio" onclick="magueule('film');" name="select" id=filmcheck checked>
+                    Film
+                  </label>
+                  <label class="radio-inline" style="margin-left:2%;">
+                    <input type="radio" onclick="magueule('serie');" name="select" id=seriecheck >
+                    Série
+                  </label>
                 </form>
                 <div id="videodiv">
                     <form action="{{ route('contents.moviestore')}}" method="POST" enctype="multipart/form-data" id="video">
@@ -21,15 +27,27 @@
                                 <label for="film_name">Film name :</label>
                                 <input type='text' class="form-control" name="filmname" placeholder="Name of the movie"></input>
                             </div>
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                              </div>
+                              <div class="custom-file">
+                                <input type="file" name="video" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                              </div>
+                              @if($errors->has('video'))
+                                  <p class="help is-danger">{{ $errors->first('video') }}</p>
+                              @endif
+                            </div>
                         </div>
-                        <div class="field">
+                        <!-- <div class="field">
                             <div class="control">
                                 <input class="input" type="file" name="video">
                             </div>
                             @if($errors->has('video'))
                                 <p class="help is-danger">{{ $errors->first('video') }}</p>
                             @endif
-                        </div>
+                        </div> -->
                         <div class="field">
                             <div class="control">
                                 <button class="btn btn-primary" type="submit">Add movie</button>
@@ -50,22 +68,28 @@
                         <div class="field">
                           <div class="form-group">
                               <label for="quantity">Number of the season you want to add :</label>
-                              <input type="number" id="quantity" name="number_season" min="0" max="100" step="1" value="1">
+                              <input class="form-control" type="number" id="quantity" name="number_season" min="0" max="100" step="1" value="1">
                           </div>
                         </div>
                         <div class="field">
                           <div class="form-group">
                               <label for="quantity">Number of the episode you want to add :</label>
-                              <input type="number" id="quantity" name="number_episode" min="0" max="100" step="1" value="1">
+                              <input class="form-control" type="number" id="quantity" name="number_episode" min="0" max="100" step="1" value="1">
                           </div>
                         </div>
                         <div class="field">
-                            <div class="control">
-                                <input class="input" type="file" name="serie">
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                              <input type="file" name="serie" class="custom-file-input" id="inputGroupFile02" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                             </div>
                             @if($errors->has('serie'))
                                 <p class="help is-danger">{{ $errors->first('serie') }}</p>
                             @endif
+                          </div>
                         </div>
                         <div class="field">
                             <div class="control">
@@ -78,7 +102,22 @@
         </div>
     </div>
 </div>
-
+<script>
+   $('#inputGroupFile01').on('change',function(){
+       //get the file name
+       // var fileName = $(this).val();
+       var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+       //replace the "Choose a file" label
+       $(this).next('.custom-file-label').html(fileName);
+   });
+   $('#inputGroupFile02').on('change',function(){
+       //get the file name
+       // var fileName = $(this).val();
+       var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+       //replace the "Choose a file" label
+       $(this).next('.custom-file-label').html(fileName);
+   });
+</script>
 <script>
 document.getElementById('videodiv').style.display='block';
 document.getElementById('seriediv').style.display='none';

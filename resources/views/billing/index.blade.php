@@ -4,10 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <h3> Billing Page </h3>
+            <br/>
             <div class="card">
                 <div class="card-header"> My plan </div>
 
-                  <div class="card-body">
+                  <div class="card-body" style="text-align:center;">
                     @if (session('message'))
                       <div class="alert alert-info">
                         {{ session('message') }}
@@ -15,13 +17,13 @@
                     @endif
 
                     @if (is_null($currentPlan))
-                      You are now on Free Plan. Choose plan to upgrade :
+                      You are on Free Plan. Choose plan to upgrade :
                       </br></br>
                     @endif
 
                     <div class="row">
                       @foreach ($plans as $plan)
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-4 text-center" style="margin:auto;">
                           <h3> {{ $plan->name }} </h3>
                           <b> ${{ number_format($plan->price / 100, 2) }} /month </b>
                           <hr>

@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @yield('styles')
@@ -127,9 +128,11 @@
                         @endif
                     </ul>
                     <div style="margin-left:3%;">
-                      <form class="form-inline" action="/search" method="get">
-                        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      <!-- Search form -->
+                      <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" action="/search" method="get">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm ml-3 w-75" type="search" name="search" placeholder="Search"
+                          aria-label="Search">
                       </form>
                     </div>
                 </div>
