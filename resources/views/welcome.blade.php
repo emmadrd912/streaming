@@ -107,7 +107,21 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">My account</a>
+                    @if(Auth::check())
+                        @if (Auth::user()->isPremium())
+                          <a href="{{ url('/catalog') }}">My account</a>
+                        @endif
+                    @endif
+                    @if(Auth::check())
+                        @if (Auth::user()->isAdmin())
+                          <a href="{{ url('/catalog') }}">My account</a>
+                        @endif
+                    @endif
+                    @if(Auth::check())
+                        @if (Auth::user()->isFree())
+                          <a href="{{ url('/catalogfree') }}">My account</a>
+                        @endif
+                    @endif
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
