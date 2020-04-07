@@ -66,7 +66,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 });
 
 Route::group(['middleware' => ['role:free']], function () {
-    Route::resource('catalogfree', 'CatalogController');
+    //Route::resource('catalogfree', 'CatalogController');
     Route::get('catalogfree', 'CatalogController@random');
 
 

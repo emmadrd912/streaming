@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 use App\Content;
 use App\Serie;
+use App\Catalogfree;
 use DB;
+use App\Post;
 
 class CatalogController extends Controller
 {
@@ -29,33 +32,37 @@ class CatalogController extends Controller
    */
     public function random()
     {
-        $date = catalogfree::where('updated at');
-        //$diff = time() - strtotime($date); 
-       // if($diff >= 86400 || $diff == NULL)
-        //{
-            $random_contents = Content::all()->random(2);
-            $first_random_content = $random_contents->toArray()[0]['contentid'];
-            $second_random_content = $random_contents->toArray()[1]['contentid'];
+        $date = Catalogfree::all()->first();
+        $date = $date->toArray()["updated_at"];
+
+        $diff = time() - strtotime($date);
+//300
+        if($diff >= 300 || $date == NULL)
+        {
+            $contentsCount = 0;
             $random_series = Serie::all()->random(1);
-            $first_random_series = $random_series->toArray()[0]['episode_id'];
-
-            DB::table('catalogfrees')->updateOrInsert(
-                ['id'=> 1],
-                ['contentid' => $first_random_content]);
-            DB::table('catalogfrees')->updateOrInsert(
-                ['id'=> 2],
-                ['contentid' => $second_random_content]);
-            DB::table('catalogfrees')->updateOrInsert(
-                    ['id'=> 3],
-                    ['contentid' => $first_random_series]);
-            // $catalogfrees->contentid=$first_random_content;
-            // $catalogfrees->save();  
-
-        //}
-
-
-    //   $random_series = Serie::all()->random(1);
-      return view('catalogfree', compact('random_contents','random_series'));
+            $random_contents = Content::all()->random(2);
+            foreach(Catalogfree::all() as $catalog) {
+                $catalog->episode_id = null;
+                $catalog->contentid = null;
+                $catalog->save();
+                if($contentsCount < 2) {
+                    $catalog->contentid = $random_contents[$contentsCount]->contentid;
+                    $contentsCount++;
+                } else {
+                    $catalog->episode_id = $random_series[0]->episode_id;
+                }
+                $catalog->save();
+            }
+        }
+        $series = Catalogfree::whereHas('serie')->get()->map(function($item) {
+            return $item->serie;
+        });
+        $contents = Catalogfree::whereHas('content')->get()->map(function($item) {
+            return $item->content;
+        });
+        
+        return view('catalogfree', compact('series', 'contents'));
     }
 
     /**

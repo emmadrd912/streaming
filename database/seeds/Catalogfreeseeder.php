@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Catalogfree;
 
 class Catalogfreeseeder extends Seeder
 {
@@ -12,7 +13,7 @@ class Catalogfreeseeder extends Seeder
     public function run()
     {
       for ($i = 0; $i <= 2; $i++){
-        DB::table('catalogfrees')->insert([
+        Catalogfree::create([
             'contentid' => null,
             'episode_id' => null
         ]);
