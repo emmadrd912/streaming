@@ -24,6 +24,7 @@
                   <a style="text-decoration:none; color:black;" href="#">{{$agenda->episode_name}} {{$agenda->name}} </a>
                 </p>
                 <p> {{$agenda->vote}}/10 </p>
+                <p> {{$agenda->release_date}} </p>
               </div>
             </div>
           </div>
@@ -41,6 +42,7 @@
                       </a>
                     </p>
                     <p> {{$agenda->vote}}/10 </p>
+                    <p> {{$agenda->release_date}} </p>
                   </div>
                 </div>
               </div>
@@ -56,6 +58,7 @@
                   <a style="text-decoration:none; color:black;" href="#">{{$agenda->name}} </a>
                 </p>
                 <p> {{$agenda->vote}}/10 </p>
+                <p> {{$agenda->release_date}} </p>
               </div>
             </div>
           </div>

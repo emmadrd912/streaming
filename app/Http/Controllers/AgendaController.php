@@ -61,10 +61,12 @@ class AgendaController extends Controller
     {
           $request->validate([
               'filmname' => 'required|string',
+              'date' => 'required',
           ]);
 
           //CA MARCHE JE PLEURE
           $name = $request->get('filmname');
+          $date = $request->get('date');
           $filmname = Http::get('https://api.themoviedb.org/3/search/movie?api_key=f3e0583eb3254bc512360eb077868839&query='.$name)
             ->json()['results'];
 
@@ -72,7 +74,7 @@ class AgendaController extends Controller
               'name' => $filmname[0]['title'],
               'comment' => $filmname[0]['overview'],
               'vote' => $filmname[0]['vote_average'],
-              'release_date' => $filmname[0]['release_date'],
+              'release_date' => $date,
               'poster_path' => $filmname[0]['poster_path'],
               'backdrop_path' => $filmname[0]['backdrop_path'],
 
@@ -91,9 +93,11 @@ class AgendaController extends Controller
      {
          $request->validate([
              'serie_name' => 'required|string',
+             'date' => 'required',
          ]);
 
          $name = $request->get('serie_name');
+         $date = $request->get('date');
          $serieinfo = Http::get('https://api.themoviedb.org/3/search/tv?api_key=f3e0583eb3254bc512360eb077868839&query='.$name)
          ->json()['results'];
 
@@ -111,7 +115,7 @@ class AgendaController extends Controller
              'name' => $serieinfo[0]['name'],
              'comment' => $episode['overview'],
              'vote' => $episode['vote_average'],
-             'release_date' => $episode['air_date'],
+             'release_date' => $date,
              'backdrop_path' => $serieinfo[0]['backdrop_path'],
              'still_path' => $episode['still_path'],
 

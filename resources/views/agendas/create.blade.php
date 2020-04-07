@@ -28,6 +28,18 @@
                                 <input type='text' class="form-control" name="filmname" placeholder="Name of the movie"></input>
                             </div>
                         </div>
+                        <!-- <div class="field">
+                            <div class="form-group">
+                                <label for="date"> Date :</label>
+                                <input type='text' class="form-control" name="date" placeholder="Date"></input>
+                            </div>
+                        </div> -->
+                        <div class="field">
+                          <div class="form-group">
+                              <label for="date"> Date </label>
+                              <input type='date' class="form-control" name="date" placeholder="Choose a date"></input>
+                          </div>
+                        </div>
                         <div class="field">
                             <div class="control">
                                 <button class="btn btn-primary" type="submit">Add agenda</button>
@@ -54,6 +66,12 @@
                           <div class="form-group">
                               <label for="quantity">Number of the episode you want to add :</label>
                               <input class="form-control" type="number" id="quantity" name="number_episode" min="0" max="100" step="1" value="1">
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="form-group">
+                              <label for="date"> Date </label>
+                              <input type='date' class="form-control" name="date" placeholder="Choose a date"></input>
                           </div>
                         </div>
                         <div class="field">
