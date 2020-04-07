@@ -41,6 +41,7 @@ Route::group(['middleware' => ['role:premium|admin|free']], function () {
     Route::resource('profile', 'ProfileController');
     Route::get('player/{id}', 'PlayerController@transmitid')->name('film.go');
     Route::get('players/{id}', 'PlayerController@transmitserie')->name('serie.go');
+    Route::get('agenda', 'AgendaController@blade');
 });
 
 Route::group(['middleware' => ['role:premium']], function () {
@@ -56,10 +57,12 @@ Route::group(['middleware' => ['role:premium|admin']], function () {
 Route::group(['middleware' => ['role:admin']], function () {
     Route::resource('users', 'UsersController');
     Route::resource('roles','RoleController');
-    // Route::resource('content','VideoController');
+    Route::resource('agendas','AgendaController');
     Route::resource('contents', 'VideoController');
     Route::post('video', 'VideoController@moviestore')->name('contents.moviestore');
     Route::post('serie', 'VideoController@seriestore')->name('contents.seriestore');
+    Route::post('agendamovie', 'AgendaController@moviestore')->name('agendas.moviestore');
+    Route::post('agendaserie', 'AgendaController@seriestore')->name('agendas.seriestore');
     Route::post('destroy/{id}', 'VideoController@destroyserie')->name('contents.destroyserie');
     Route::post('edit/{id}', 'VideoController@editserie')->name('contents.editserie');
     Route::post('update/{id}', 'VideoController@updateserie')->name('contents.updateserie');

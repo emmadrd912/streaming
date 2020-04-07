@@ -30,18 +30,6 @@ class VideoController extends Controller
      */
     public function create()
     {
-        // public function addvideo()
-        // {
-        //     request()->validate([
-        //         'filmname' => 'required|string',
-        //         'video' => 'required|mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi',
-        //     ]);
-
-        //     DB::insert('insert into Content (id, contentname, Content_added_at, contentid) values (?, ?, ?, ?)', [filmname]);
-        //     $path = request('video')->store('videos');
-
-        //     return $path;
-        // }
         return view('contents.create');
     }
 

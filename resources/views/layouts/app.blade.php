@@ -124,8 +124,14 @@
                             <li class="nav-item">
                               <a class="nav-link" href="{{ url('contents') }}"> Video panel </a>
                             </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ url('agendas') }}"> Agenda panel </a>
+                            </li>
                             @endif
                         @endif
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ url('agenda') }}"> Agenda </a>
+                        </li>
                     </ul>
                     <div style="margin-left:3%;">
                       <!-- Search form -->
