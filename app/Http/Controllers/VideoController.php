@@ -67,7 +67,7 @@ class VideoController extends Controller
 
             $content = new Content([
                 'path' => $path,
-                'contentname' => $name,
+                'contentname' => $filmname[0]['title'],
                 'contentid' => $filmname[0]['id'],
                 'comment' => $filmname[0]['overview'],
                 'vote' => $filmname[0]['vote_average'],
@@ -221,7 +221,7 @@ class VideoController extends Controller
                  'episode_name' => $episode['name'],
                  'episode_id' => $episode['id'],
                  'episode_season' => $episode['season_number'],
-                 'serie_name' => $name,
+                 'serie_name' => $serieinfo[0]['name'],
                  'comment' => $episode['overview'],
                  'vote' => $episode['vote_average'],
                  'release_date' => $episode['air_date'],

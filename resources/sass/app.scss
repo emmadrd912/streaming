@@ -49,56 +49,48 @@
   text-decoration: none;
 }
 
-.active-pink-2 input.form-control[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #f48fb1;
-  box-shadow: 0 1px 0 0 #f48fb1;
+
+.conteneur{
+  position: relative;
 }
-.active-pink input.form-control[type=text] {
-  border-bottom: 1px solid #f48fb1;
-  box-shadow: 0 1px 0 0 #f48fb1;
+
+.catalogimg {
+  opacity: 1;
+  display: block;
+  // width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
-.active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #ce93d8;
-  box-shadow: 0 1px 0 0 #ce93d8;
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
 }
-.active-purple input.form-control[type=text] {
-  border-bottom: 1px solid #ce93d8;
-  box-shadow: 0 1px 0 0 #ce93d8;
+
+.conteneur:hover .catalogimg {
+  opacity: 0.2;
 }
-.active-cyan-2 input.form-control[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #4dd0e1;
-  box-shadow: 0 1px 0 0 #4dd0e1;
+
+.conteneur:hover .middle {
+  opacity: 1;
 }
-.active-pink-2 input[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #f48fb1;
-  box-shadow: 0 1px 0 0 #f48fb1;
+
+.text {
+  // background-color: #4CAF50;
+  // font-weight: bold;
+  color: black;
+  font-size: 14px;
+  // padding: 16px 32px;
 }
-.active-pink input[type=text] {
-  border-bottom: 1px solid #f48fb1;
-  box-shadow: 0 1px 0 0 #f48fb1;
-}
-.active-purple-2 input[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #ce93d8;
-  box-shadow: 0 1px 0 0 #ce93d8;
-}
-.active-purple input[type=text] {
-  border-bottom: 1px solid #ce93d8;
-  box-shadow: 0 1px 0 0 #ce93d8;
-}
-.active-cyan-2 input[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #4dd0e1;
-  box-shadow: 0 1px 0 0 #4dd0e1;
-}
-.active-cyan input[type=text] {
-  border-bottom: 1px solid #4dd0e1;
-  box-shadow: 0 1px 0 0 #4dd0e1;
-}
-.active-cyan .fa, .active-cyan-2 .fa {
-  color: #4dd0e1;
-}
-.active-purple .fa, .active-purple-2 .fa {
-  color: #ce93d8;
-}
-.active-pink .fa, .active-pink-2 .fa {
-  color: #f48fb1;
+
+.textserie {
+  color: black;
+  font-size: 14px;
 }
