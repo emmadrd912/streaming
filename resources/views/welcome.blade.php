@@ -155,9 +155,8 @@
                       <div class="card-body">
                         <h5 class="bold card-title"> Free </h5>
                         <h6 class="ita card-subtitle mb-2 text-muted"> Limited </h6>
-                        <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="card-text"> <i class="fas fa-times"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text"> <i class="fas fa-check"></i>  Limited to 2 random movie per day.</p>
+                        <p class="card-text"> <i class="fas fa-check"></i>  Limited to 1 random TV show episode per day.</p>
                         <a href="{{ route('login') }}" class="card-link"> Choose </a>
                       </div>
                     </div>
@@ -165,9 +164,8 @@
                       <div class="card-body">
                         <h5 class="bold card-title"> 9$99 </h5>
                         <h6 class="ita card-subtitle mb-2 text-muted"> Unlimited </h6>
-                        <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <p class="card-text"> <i class="fas fa-check"></i>  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text"> <i class="fas fa-check"></i>  Unlimited access to all the movie.</p>
+                        <p class="card-text"> <i class="fas fa-check"></i>  Unlimited access to all TV show episode.</p>
                         <a href="{{ route('login') }}" class="card-link"> Choose </a>
                       </div>
                     </div>
