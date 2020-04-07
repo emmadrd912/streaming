@@ -40,3 +40,12 @@
   });
 </script>
 @endsection
+
+@section('styles')
+    <style>
+        body {
+          color: white;
+          background-image: url({{ asset('img/fondfinal.png') }});
+        }
+    </style>
+@endsection
