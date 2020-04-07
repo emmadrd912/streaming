@@ -19,11 +19,11 @@
   <br/>
   <div class="" style="display:flex;">
     @if (is_null($data->contentname))
-      <h3 style="margin-right:70%;"> {{$data->serie_name}}</h3>
+      <h3> {{$data->serie_name}}</h3>
     @else
-      <h3 style="margin-right:70%;"> {{$data->contentname}}</h3>
+      <h3> {{$data->contentname}}</h3>
     @endif
-    <p> {{ $data->vote}}/10</p>
+    <h5 style="padding-left:10%;"> {{ $data->vote}}/10</h5>
   </div>
   @if (is_null($data->contentname))
     <p style="font-style:italic"> {{ $data->episode_name }} </p>
