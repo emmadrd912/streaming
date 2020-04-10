@@ -114,6 +114,9 @@
                             <li class="nav-item">
                                     <a class="nav-link" href="{{ route('billing') }}"> Billing </a>
                             </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('preview') }}"> Preview </a>
+                            </li>
                             @endif
                         @endif
                         @if(Auth::check())
@@ -136,14 +139,30 @@
                           <a class="nav-link" href="{{ url('agenda') }}"> Agenda </a>
                         </li>
                     </ul>
-                    <div style="margin-left:3%;">
-                      <!-- Search form -->
-                      <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" action="/search" method="get">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                        <input class="form-control form-control-sm ml-3 w-75" type="search" name="search" placeholder="Search"
-                          aria-label="Search">
-                      </form>
-                    </div>
+                    @if(Auth::check())
+                        @if (Auth::user()->isAdmin())
+                          <div style="margin-left:3%;">
+                            <!-- Search form -->
+                            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" action="/search" method="get">
+                              <i class="fas fa-search" aria-hidden="true"></i>
+                              <input class="form-control form-control-sm ml-3 w-75" type="search" name="search" placeholder="Search"
+                                aria-label="Search">
+                            </form>
+                          </div>
+                       @endif
+                    @endif
+                    @if(Auth::check())
+                        @if (Auth::user()->isPremium())
+                          <div style="margin-left:3%;">
+                            <!-- Search form -->
+                            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" action="/search" method="get">
+                              <i class="fas fa-search" aria-hidden="true"></i>
+                              <input class="form-control form-control-sm ml-3 w-75" type="search" name="search" placeholder="Search"
+                                aria-label="Search">
+                            </form>
+                          </div>
+                       @endif
+                    @endif
                 </div>
             </div>
         </nav>

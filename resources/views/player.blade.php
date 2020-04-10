@@ -18,18 +18,22 @@
   </video>
   <br/>
   <div class="" style="display:flex;">
-    @if (is_null($data->contentname))
-      <h3> {{$data->serie_name}}</h3>
-    @else
-      <h3> {{$data->contentname}}</h3>
-    @endif
-    <h5 style="padding-left:10%;"> {{ $data->vote}}/10</h5>
+    <div class="" style="width:95%;">
+      @if (is_null($data->contentname))
+        <h3> {{$data->serie_name}}</h3>
+      @else
+        <h3> {{$data->contentname}}</h3>
+      @endif
+    </div>
+    <div class="" style="width:5%;">
+        <h5> {{ $data->vote}}/10</h5>
+    </div>
   </div>
-  @if (is_null($data->contentname))
-    <p style="font-style:italic"> {{ $data->episode_name }} </p>
-  @endif
-  <p> {{ $data->release_date }} </p>
-  <p> {{ $data->comment }} </p>
+    @if (is_null($data->contentname))
+      <p style="font-style:italic"> {{ $data->episode_name }} </p>
+    @endif
+    <p> {{ $data->release_date }} </p>
+    <p> {{ $data->comment }} </p>
 </div>
 
 <script src="https://cdn.plyr.io/3.5.10/plyr.js"></script>
@@ -43,9 +47,11 @@
 
 @section('styles')
     <style>
-        body {
-          color: white;
-          background-image: url({{ asset('img/fondfinal.png') }});
-        }
+      body {
+        background-color: rgb(26, 29, 41);
+      }
+      main {
+        color: white;
+      }
     </style>
 @endsection

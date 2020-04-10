@@ -68,10 +68,9 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::post('update/{id}', 'VideoController@updateserie')->name('contents.updateserie');
 });
 
-Route::group(['middleware' => ['role:free']], function () {
-    //Route::resource('catalogfree', 'CatalogController');
+Route::group(['middleware' => ['role:free|admin']], function () {
     Route::get('catalogfree', 'CatalogController@random');
-
-
+    Route::get('preview', 'CatalogController@preview');
 });
+
 Route::get('/sendmail', 'MailController@sendmail');

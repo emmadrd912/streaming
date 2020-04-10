@@ -23,6 +23,19 @@ class CatalogController extends Controller
       $series = Serie::all();
       return view('catalog', compact('contents','series'));
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function preview()
+    {
+      $contents = Content::all(); 
+      $series = Serie::all();
+      return view('preview', compact('contents','series'));
+    }
+
   /**
    * Update the specified resource in storage.
    *
@@ -61,7 +74,7 @@ class CatalogController extends Controller
         $contents = Catalogfree::whereHas('content')->get()->map(function($item) {
             return $item->content;
         });
-        
+
         return view('catalogfree', compact('series', 'contents'));
     }
 
@@ -85,7 +98,7 @@ class CatalogController extends Controller
         $search = $request->get('search');
         $contents = DB::table('contents')->where('contentname', 'like', '%'.$search.'%')->get();
         $series = DB::table('series')->where('serie_name', 'like', '%'.$search.'%')->get();
-        return view('search', compact('contents','series'));
+        return view('search', compact('contents','series','search'));
       }
 
     /**
