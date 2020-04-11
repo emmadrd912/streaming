@@ -25,7 +25,7 @@
             </div>
           </div>
           @else
-            <div class="conteneur" style="margin:1%;">
+            <div class="conteneur contmar">
                 <img src="https://image.tmdb.org/t/p/w154{{ $content->poster_path}}" class="catalogimg"/>
               <div class="middle">
                 <div class="text">

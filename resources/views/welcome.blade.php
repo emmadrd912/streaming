@@ -12,97 +12,11 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script type="module" src="{{asset('js/app.js')}}" ></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                color : #fff;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-                color: white!important;
-            }
-
-            .links > a {
-                color: #fff;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-            .prices {
-              background-color: rgb(26, 29, 41);
-            }
-            .prices_title {
-              color : #636b6f;
-            }
-            .bold {
-              font-weight: bold;
-            }
-            .ita {
-              font-style: italic;
-            }
-            .mar5 {
-              margin: 3%;
-              width: 110px;
-            }
-            .fond {
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-image: url({{ asset('img/fondfinal.png') }});
-            }
-            .boxes {
-              width: 25rem;
-              border-radius:8%;
-              box-shadow:
-                0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-                0 12.5px 10px rgba(0, 0, 0, 0.06),
-                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-                0 100px 80px rgba(0, 0, 0, 0.12)
-                ;
-              background: white;
-            }
-        </style>
     </head>
     <body style="background-color: rgb(26, 29, 41);">
-        <div class="flex-center position-ref full-height fond">
+        <div class="heigth500 flex-center position-ref full-height fond">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -147,10 +61,10 @@
                     Prices
                 </div>
 
-                <div style="display:inline-flex;">
+                <div class="pricesflex">
                     <!-- <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a> -->
-                    <div class="boxes card prices_title" style="margin-right:10%;">
+                    <div class="mediaprices boxes card prices_title">
                       <div class="card-body">
                         <h5 class="bold card-title"> Free </h5>
                         <h6 class="ita card-subtitle mb-2 text-muted"> Limited </h6>
@@ -159,7 +73,7 @@
                         <a href="{{ route('login') }}" class="card-link"> Choose </a>
                       </div>
                     </div>
-                    <div class="boxes card prices_title">
+                    <div class="mediaprices boxes card prices_title">
                       <div class="card-body">
                         <h5 class="bold card-title"> 9$99 </h5>
                         <h6 class="ita card-subtitle mb-2 text-muted"> Unlimited </h6>
@@ -174,7 +88,7 @@
         </div>
         <div class="fond flex-center position-ref full-height">
             <div class="content">
-                <div class="m-b-md" style="font-size:50px;">
+                <div class="m-b-md titre50">
                     Your favorite movies & shows in one place
                 </div>
                 <div class="links">

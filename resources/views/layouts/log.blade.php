@@ -26,10 +26,10 @@
               <a class="h1stream" href="{{ url('/') }}">
                   {{ config('app.name', 'Flixnet') }}
               </a>
-              <ul class="navbar-nav ml-auto" style="flex-direction:inherit; padding-right:5%;">
+              <ul class="navbar-nav ml-auto ullog">
                   <!-- Authentication Links -->
                   @guest
-                      <li class="nav-item" style="padding-right:35%;">
+                      <li class="nav-item pad35">
                           <a class="pagelog nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                       </li>
                       @if (Route::has('register'))

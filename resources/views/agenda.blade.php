@@ -27,7 +27,7 @@
             </div>
           </div>
             @else
-              <div class="conteneur" style="margin:1%;">
+              <div class="conteneur contmar">
                     <img src="https://image.tmdb.org/t/p/w154{{ $agenda->still_path}}" class="catalogimg"/>
                 <div class="middle">
                   <div class="textserie">
@@ -42,7 +42,7 @@
               </div>
           @endif
         @else
-          <div class="conteneur" style="margin:1%;">
+          <div class="conteneur contmar">
               <img src="https://image.tmdb.org/t/p/w154{{ $agenda->poster_path}}" class="catalogimg"/>
             <div class="middle">
               <div class="text">

@@ -24,7 +24,7 @@
           <tr>
               <td data-label="NAME">{{$user->name}}</td>
               <td data-label="EMAIL">{{$user->email}}</td>
-              <td style="-webkit-text-security: disc;">{{$user->password}}</td>
+              <td style="-webkit-text-security: disc;"> password </td>
               <td data-label="ACTION"><a href="{{ route('profile.edit',$user->id)}}" class="btn btn-primary">Edit</a></td>
           </tr>
           @endforeach

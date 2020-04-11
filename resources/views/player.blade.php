@@ -17,7 +17,7 @@
                   <!-- Fallback for browsers that don't support the <video> element -->
   </video>
   <br/>
-  <div style="display:flex;">
+  <div class="playerdiv">
     <div style="width:95%;">
       @if (is_null($data->contentname))
         <h3> {{$data->serie_name}}</h3>

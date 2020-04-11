@@ -25,7 +25,7 @@
           <tr>
               <td data-label="NAME">{{$user->name}}</td>
               <td data-label="EMAIL">{{$user->email}}</td>
-              <td style="-webkit-text-security: disc;">{{$user->password}}</td>
+              <td style="-webkit-text-security: disc;">userpassword</td>
               <td data-label="ROLE">
                 @if(!empty($user->getRoleNames()))
                   @foreach($user->getRoleNames() as $v)

@@ -27,7 +27,7 @@
             </div>
           </div>
           @else
-            <div class="conteneur" style="margin:1%;">
+            <div class="conteneur contmar">
               <a href="{{ route('film.go',$content->id)}}">
                   <img src="https://image.tmdb.org/t/p/w154{{ $content->poster_path}}" class="catalogimg"/>
               </a>
@@ -63,7 +63,7 @@
               </div>
             </div>
             @else
-              <div class="conteneur" style="margin:1%;">
+              <div class="conteneur contmar">
                 <a href="{{ route('serie.go',$serie->id)}}">
                     <img src="https://image.tmdb.org/t/p/w154{{ $serie->still_path}}" class="catalogimg"/>
                 </a>
