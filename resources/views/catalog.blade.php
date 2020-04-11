@@ -20,7 +20,7 @@
           <div class="middle">
             <div class="text">
               <p>
-                <a style="text-decoration:none; color:black;" href="{{ route('film.go',$content->id)}}">{{$content->contentname}} </a>
+                <a style="text-decoration:none; color:white;" href="{{ route('film.go',$content->id)}}">{{$content->contentname}} </a>
               </p>
               <p> {{$content->vote}}/10 </p>
             </div>
@@ -34,7 +34,7 @@
             <div class="middle">
               <div class="text">
                 <p>
-                  <a style="text-decoration:none; color:black;" href="{{ route('film.go',$content->id)}}">{{$content->contentname}} </a>
+                  <a style="text-decoration:none; color:white;" href="{{ route('film.go',$content->id)}}">{{$content->contentname}} </a>
                 </p>
                 <p> {{$content->vote}}/10 </p>
               </div>
@@ -60,9 +60,9 @@
                 <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg" style="width:99%; height:35%; margin-top:5%;"/>
             </a>
             <div class="middle">
-              <div class="textserie">
+              <div class="text">
                 <p>
-                  <a style="text-decoration:none; color:black;" href="{{ route('serie.go',$serie->id)}}">
+                  <a style="text-decoration:none; color:white;" href="{{ route('serie.go',$serie->id)}}">
                     {{$serie->episode_name}}
                     {{$serie->serie_name}}
                   </a>
@@ -77,10 +77,10 @@
                   <img src="https://image.tmdb.org/t/p/w154{{ $serie->still_path}}" class="catalogimg" style=""/>
               </a>
               <div class="middle">
-                <div class="textserie">
+                <div class="text">
                   <br/>
                   <p>
-                    <a style="text-decoration:none; color:black;" href="{{ route('serie.go',$serie->id)}}">
+                    <a style="text-decoration:none; color:white;" href="{{ route('serie.go',$serie->id)}}">
                       {{$serie->episode_name}} {{$serie->serie_name}}
                     </a>
                   </p>

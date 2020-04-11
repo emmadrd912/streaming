@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2 style="font-style:italic"> Search </h2>
+    <h2> Search </h2>
     <br/>
     @if ($contents->isEmpty() & $series->isEmpty())
       <div class="" style="text-align:center; font-size:x-large; margin-top:10%;">

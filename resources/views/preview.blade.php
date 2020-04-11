@@ -36,6 +36,8 @@
         @endif
       @endforeach
     </div>
+    <br/>
+    <p> Go PREMIUM for $9.99 and access all the movies you dream about. </p>
   <br/>
 </div>
 @endsection

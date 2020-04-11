@@ -16,7 +16,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #636b6f;
+                /* background-color: #636b6f; */
                 /* color: #636b6f; */
                 color : #fff;
                 font-family: 'Nunito', sans-serif;
@@ -51,6 +51,7 @@
 
             .title {
                 font-size: 84px;
+                color: white!important;
             }
 
             .links > a {
@@ -67,7 +68,7 @@
                 margin-bottom: 30px;
             }
             .prices {
-              background-color: #fff;
+              background-color: rgb(26, 29, 41);
             }
             .prices_title {
               color : #636b6f;
@@ -102,7 +103,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="background-color: rgb(26, 29, 41);">
         <div class="flex-center position-ref full-height fond">
             @if (Route::has('login'))
                 <div class="top-right links">

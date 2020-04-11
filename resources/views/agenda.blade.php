@@ -15,13 +15,11 @@
         @if (is_null($agenda->poster_path))
           @if (is_null($agenda->still_path))
           <div class="conteneur" style="margin:1%; width:14%">
-            <a href="#">
-                <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg" style="width:99%; margin-top:6%;"/>
-            </a>
+              <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg" style="width:99%; margin-top:6%;"/>
             <div class="middle">
               <div class="text">
                 <p>
-                  <a style="text-decoration:none; color:black;" href="#">{{$agenda->episode_name}} {{$agenda->name}} </a>
+                  {{$agenda->episode_name}} {{$agenda->name}}
                 </p>
                 <p> {{$agenda->vote}}/10 </p>
                 <p> {{$agenda->release_date}} </p>
@@ -30,16 +28,12 @@
           </div>
             @else
               <div class="conteneur" style="margin:1%;">
-                <a href="#">
                     <img src="https://image.tmdb.org/t/p/w154{{ $agenda->still_path}}" class="catalogimg" style=""/>
-                </a>
                 <div class="middle">
                   <div class="textserie">
                     <br/>
                     <p>
-                      <a style="text-decoration:none; color:black;" href="#">
                         {{$agenda->episode_name}} {{$agenda->name}}
-                      </a>
                     </p>
                     <p> {{$agenda->vote}}/10 </p>
                     <p> {{$agenda->release_date}} </p>
@@ -49,13 +43,11 @@
           @endif
         @else
           <div class="conteneur" style="margin:1%;">
-            <a href="#">
-                <img src="https://image.tmdb.org/t/p/w154{{ $agenda->poster_path}}" class="catalogimg"/>
-            </a>
+              <img src="https://image.tmdb.org/t/p/w154{{ $agenda->poster_path}}" class="catalogimg"/>
             <div class="middle">
               <div class="text">
                 <p>
-                  <a style="text-decoration:none; color:black;" href="#">{{$agenda->name}} </a>
+                  {{$agenda->name}}
                 </p>
                 <p> {{$agenda->vote}}/10 </p>
                 <p> {{$agenda->release_date}} </p>

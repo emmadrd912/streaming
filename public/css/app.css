@@ -10957,12 +10957,11 @@ a.text-dark:focus {
 }
 
 .text {
-  color: black;
+  color: white;
   font-size: 14px;
 }
 
-.textserie {
-  color: black;
-  font-size: 14px;
+.table {
+  color: white !important;
 }
 

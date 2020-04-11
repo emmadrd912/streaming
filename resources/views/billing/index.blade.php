@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="color:black;">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h3> Billing Page </h3>
+            <h3 style="color:white;"> Billing Page </h3>
             <br/>
             <div class="card">
                 <div class="card-header"> My plan </div>
@@ -53,7 +53,7 @@
               <div class="card">
                   <div class="card-header"> Payment methods </div>
                     <div class="card-body">
-                      <table class="table">
+                      <table class="table" style="color:black!important;">
                         <thead>
                           <tr>
                             <th> Brand </th>
