@@ -56,4 +56,12 @@ Home
 ## Architecture de la base de données
 ![database diagram](rendu/diagram.png)
 ## Fonctionnalités majeures
+### Paiements par mois
+### Stream vidéo
+Utilisation du player plyr
+### Upload de vidéo et de série
+### Détection automatique des métadata d'une vidéo
+Grace au nom d'une vidéo nous arrivons automatiquement récuperer ses informations (Synopsis, note, date de sortie, etc...
+### Catalogue gratuit de contenu
+Toute les 24 heures le catalogue de vidéo pour les utilisateurs gratuit s'actualise
 ## Capture d'écrans
