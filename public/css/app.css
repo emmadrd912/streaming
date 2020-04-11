@@ -10965,3 +10965,68 @@ a.text-dark:focus {
   color: white !important;
 }
 
+.nosearch {
+  text-align: center;
+  font-size: x-large;
+  margin-top: 10%;
+}
+
+.awhite {
+  text-decoration: none;
+  color: white;
+}
+
+.awhite:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.ablack {
+  color: black;
+}
+
+.goodplace {
+  margin: 1%;
+  width: 14%;
+}
+
+.movieplaceholder {
+  width: 99%;
+  margin-top: 6%;
+}
+
+.serieplaceholder {
+  width: 99%;
+  height: 35%;
+  margin-top: 5%;
+}
+
+.center {
+  text-align: center;
+}
+
+.notyet {
+  font-style: italic;
+  padding-left: 2%;
+}
+
+.uper {
+  margin-top: 40px;
+}
+
+.blacktext {
+  color: black;
+}
+
+.whitetext {
+  color: white;
+}
+
+.layoutbody {
+  background-color: #1a1d29;
+}
+
+.layouttext {
+  color: white !important;
+}
+

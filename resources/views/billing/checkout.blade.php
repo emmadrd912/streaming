@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="color:black;">
+<div class="container blacktext">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"> Subscribe to {{ $plan->name }} </div>
-
                 <form action="{{ route('checkout.process') }}" method="post" id="checkout-form">
                   @csrf
 

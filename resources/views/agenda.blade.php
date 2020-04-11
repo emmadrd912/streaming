@@ -6,16 +6,16 @@
   <h2> Soon </h2>
   <br/>
   @if ($agendas->isEmpty())
-    <div class="" style="font-style:italic; padding-left:2%;">
-      <p> Not yet :) </p>
+    <div class="notyet">
+      <p> No new film or series planned. </p>
     </div>
   @else
     <div class="row">
       @foreach ($agendas as $agenda)
         @if (is_null($agenda->poster_path))
           @if (is_null($agenda->still_path))
-          <div class="conteneur" style="margin:1%; width:14%">
-              <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg" style="width:99%; margin-top:6%;"/>
+          <div class="conteneur goodplace">
+              <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg movieplaceholder"/>
             <div class="middle">
               <div class="text">
                 <p>
@@ -28,7 +28,7 @@
           </div>
             @else
               <div class="conteneur" style="margin:1%;">
-                    <img src="https://image.tmdb.org/t/p/w154{{ $agenda->still_path}}" class="catalogimg" style=""/>
+                    <img src="https://image.tmdb.org/t/p/w154{{ $agenda->still_path}}" class="catalogimg"/>
                 <div class="middle">
                   <div class="textserie">
                     <br/>

@@ -16,8 +16,6 @@
         <!-- Styles -->
         <style>
             html, body {
-                /* background-color: #636b6f; */
-                /* color: #636b6f; */
                 color : #fff;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -167,6 +165,7 @@
                         <h6 class="ita card-subtitle mb-2 text-muted"> Unlimited </h6>
                         <p class="card-text"> <i class="fas fa-check"></i>  Unlimited access to all the movie.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Unlimited access to all TV show episode.</p>
+                        <br/>
                         <a href="{{ route('login') }}" class="card-link"> Choose </a>
                       </div>
                     </div>

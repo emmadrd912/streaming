@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="color:black;">
+<div class="container blacktext">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"> Add payment method </div>
-
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
@@ -15,21 +14,15 @@
                             {{ session('error') }}
                           </div>
                         @endif
-
                         <form action="{{ route('payment-methods.store') }}" method="post" id="checkout-form">
                           @csrf
                           <input type="hidden" name="payment-method" id="payment-method" value=""/>
-
                           <input id="card-holder-name" type="text" placeholder="Card holder name" class="form-control">
-
                           <!-- Stripe Elements Placeholder -->
                           <div id="card-element"></div>
-
                           </br>
-
                           <input type="checkbox" name="defautl" value="1"> Mark as default method
                           </br></br>
-
                           <button id="card-button" class="btn btn-primary">
                               Add method
                           </button>

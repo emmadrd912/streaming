@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="color:black;">
-  <style>
-    .uper {
-      margin-top: 40px;
-    }
-  </style>
+<div class="container blacktext">
   <div class="card uper">
     <div class="card-header">
       Add User
@@ -35,10 +30,6 @@
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" name="password"/>
             </div>
-            <!-- <div class="form-group">
-                <label for="password">Role:</label>
-                <input type="text" class="form-control" name="role"/>
-            </div> -->
             <div class="form-group">
                 <label for="role">Role:</label>
                 <select name="roles" class="browser-default custom-select">

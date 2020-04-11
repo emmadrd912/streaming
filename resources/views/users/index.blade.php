@@ -2,11 +2,6 @@
 
 @section('content')
 <div class="container">
-  <style>
-    .uper {
-      margin-top: 40px;
-    }
-  </style>
   <br/>
   <td><a href="{{ route('users.create')}}" class="btn btn-danger"> Create User</a></td>
   <div class="uper">
@@ -18,7 +13,6 @@
     <table class="table table-bordered">
       <thead>
           <tr>
-            <!-- <td>ID</td> -->
             <th><strong>Name</th>
             <th><strong>Email</th>
             <td data-label="PASSWORD"><strong>Password</td>
@@ -29,7 +23,6 @@
       <tbody>
           @foreach($users as $user)
           <tr>
-              <!-- <td>{{$user->id}}</td> -->
               <td data-label="NAME">{{$user->name}}</td>
               <td data-label="EMAIL">{{$user->email}}</td>
               <td style="-webkit-text-security: disc;">{{$user->password}}</td>

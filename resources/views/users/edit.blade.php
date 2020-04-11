@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="color:black;">
-  <style>
-    .uper {
-      margin-top: 40px;
-    }
-  </style>
+<div class="container blacktext">
   <div class="card uper">
     <div class="card-header">
       Edit Users
@@ -26,15 +21,15 @@
           @csrf
           <div class="form-group">
             <label for="name">User Name :</label>
-            <input type="text" class="form-control" name="name" value={{ $user->name }} />
+            <input type="text" class="form-control" name="name" value="{{ $user->name }}" />
           </div>
           <div class="form-group">
             <label for="email">Email :</label>
-            <input type="text" class="form-control" name="email" value={{ $user->email }} />
+            <input type="text" class="form-control" name="email" value="{{ $user->email }}" />
           </div>
           <div class="form-group">
             <label for="password">Password :</label>
-            <input type="password" class="form-control" name="password" value={{ $user->password }} />
+            <input type="password" class="form-control" name="password" value="{{ $user->password }}" />
           </div>
           <div class="form-group">
             <label for="password"> Role : {{ $user->getRoleNames() }}</label>

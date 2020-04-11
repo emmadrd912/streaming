@@ -26,7 +26,7 @@
 
     @yield('styles')
 </head>
-<body style="background-color: rgb(26, 29, 41);">
+<body class="layoutbody">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -166,8 +166,7 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4" style="color:white!important;">
+        <main class="py-4 layouttext">
             @yield('content')
         </main>
     </div>

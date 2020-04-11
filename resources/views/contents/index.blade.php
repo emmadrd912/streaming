@@ -2,11 +2,6 @@
 
 @section('content')
 <div class="container">
-  <style>
-    .uper {
-      margin-top: 40px;
-    }
-  </style>
   <br/>
   <td><a href="{{ route('contents.create')}}" class="btn btn-danger"> Create Content</a></td>
   <div class="uper">
@@ -20,7 +15,6 @@
     <table class="table table-bordered">
       <thead>
           <tr>
-            <!-- <td>ID</td> -->
             <th><strong>Film </th>
             <th><strong>ID (id de moviedb)</th>
             <th colspan="2"><strong>Action</th>
@@ -29,7 +23,6 @@
       <tbody>
           @foreach($contents as $content)
           <tr>
-              <!-- <td>{{$content->id}}</td> -->
               <td data-label="NAME">{{$content->contentname}}</td>
               <td data-label="ID">{{$content->contentid}}</td>
               <td data-label="ACTION"><a href="{{ route('contents.edit',$content->id)}}" class="btn btn-primary">Edit</a></td>
@@ -50,7 +43,6 @@
     <table class="table table-bordered">
       <thead>
           <tr>
-            <!-- <td>ID</td> -->
             <th><strong>Serie </th>
             <th><strong>Season</th>
             <th><strong>Episode</th>

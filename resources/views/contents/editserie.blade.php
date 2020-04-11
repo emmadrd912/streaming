@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="color:black;">
-  <style>
-    .uper {
-      margin-top: 40px;
-    }
-  </style>
+<div class="container blacktext">
   <div class="card uper">
     <div class="card-header">
       Edit content
@@ -61,7 +56,6 @@
               <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
             </div>
           </div>
-        </div>
           <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

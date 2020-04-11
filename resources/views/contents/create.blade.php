@@ -3,7 +3,7 @@
 @section('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<div class="container" style="color:black;">
+<div class="container blacktext">
     <div class="row justify-content-center">
         <div class="col-md-8">
         <div class="card">
@@ -40,14 +40,6 @@
                               @endif
                             </div>
                         </div>
-                        <!-- <div class="field">
-                            <div class="control">
-                                <input class="input" type="file" name="video">
-                            </div>
-                            @if($errors->has('video'))
-                                <p class="help is-danger">{{ $errors->first('video') }}</p>
-                            @endif
-                        </div> -->
                         <div class="field">
                             <div class="control">
                                 <button class="btn btn-primary" type="submit">Add movie</button>
@@ -111,10 +103,7 @@
        $(this).next('.custom-file-label').html(fileName);
    });
    $('#inputGroupFile02').on('change',function(){
-       //get the file name
-       // var fileName = $(this).val();
        var fileName = $(this).val().replace('C:\\fakepath\\', " ");
-       //replace the "Choose a file" label
        $(this).next('.custom-file-label').html(fileName);
    });
 </script>

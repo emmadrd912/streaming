@@ -3,7 +3,7 @@
 @section('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<div class="container" style="color:black;">
+<div class="container blacktext">
     <div class="row justify-content-center">
         <div class="col-md-8">
         <div class="card">
@@ -28,12 +28,6 @@
                                 <input type='text' class="form-control" name="filmname" placeholder="Name of the movie"></input>
                             </div>
                         </div>
-                        <!-- <div class="field">
-                            <div class="form-group">
-                                <label for="date"> Date :</label>
-                                <input type='text' class="form-control" name="date" placeholder="Date"></input>
-                            </div>
-                        </div> -->
                         <div class="field">
                           <div class="form-group">
                               <label for="date"> Date </label>

@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="color:black;">
-  <style>
-    .uper {
-      margin-top: 40px;
-    }
-  </style>
+<div class="container blacktext">
   <div class="card uper">
     <div class="card-header">
       Edit content

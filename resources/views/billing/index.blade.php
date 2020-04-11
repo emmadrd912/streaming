@@ -1,15 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="color:black;">
+<div class="container blacktext">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h3 style="color:white;"> Billing Page </h3>
+            <h3 class="whitetext"> Billing Page </h3>
             <br/>
             <div class="card">
                 <div class="card-header"> My plan </div>
-
-                  <div class="card-body" style="text-align:center;">
+                  <div class="card-body center">
                     @if (session('message'))
                       <div class="alert alert-info">
                         {{ session('message') }}

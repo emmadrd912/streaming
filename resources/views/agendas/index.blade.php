@@ -2,11 +2,6 @@
 
 @section('content')
 <div class="container">
-  <style>
-    .uper {
-      margin-top: 40px;
-    }
-  </style>
   <br/>
   <td><a href="{{ route('agendas.create')}}" class="btn btn-danger"> Create Agenda </a></td>
   <div class="uper">

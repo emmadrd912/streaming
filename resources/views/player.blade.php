@@ -17,15 +17,15 @@
                   <!-- Fallback for browsers that don't support the <video> element -->
   </video>
   <br/>
-  <div class="" style="display:flex;">
-    <div class="" style="width:95%;">
+  <div style="display:flex;">
+    <div style="width:95%;">
       @if (is_null($data->contentname))
         <h3> {{$data->serie_name}}</h3>
       @else
         <h3> {{$data->contentname}}</h3>
       @endif
     </div>
-    <div class="" style="width:5%;">
+    <div style="width:5%;">
         <h5> {{ $data->vote}}/10</h5>
     </div>
   </div>
@@ -43,15 +43,4 @@
     window.player = player;
   });
 </script>
-@endsection
-
-@section('styles')
-    <style>
-      body {
-        background-color: rgb(26, 29, 41);
-      }
-      main {
-        color: white;
-      }
-    </style>
 @endsection

@@ -2,11 +2,6 @@
 
 @section('content')
 <div class="container">
-  <style>
-    .uper {
-      margin-top: 40px;
-    }
-  </style>
   <br/>
   <h1> Invoices </h1>
   <div class="uper">
@@ -28,7 +23,7 @@
             <tr>
                 <td>{{ $invoice->date()->toFormattedDateString() }}</td>
                 <td>{{ $invoice->total() }}</td>
-                <td> <a href="account/invoices/{{ $invoice->id }}">Download</a> </td>
+                <td> <a style="color:grey;" href="account/invoices/{{ $invoice->id }}">Download</a> </td>
             </tr>
         @endforeach
       </tbody>
