@@ -2,6 +2,29 @@
 
 @section('content')
 <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
+<div class="" style="padding-left:4%;">
+  @if(Auth::check())
+      @if (Auth::user()->isPremium())
+        <a href="{{ url('catalog')}}" class="awhite">
+          <i class="fas fa-arrow-left fa-lg"></i>
+        </a>
+      @endif
+  @endif
+  @if(Auth::check())
+      @if (Auth::user()->isAdmin())
+        <a href="{{ url('catalog')}}" class="awhite">
+          <i class="fas fa-arrow-left fa-lg"></i>
+        </a>
+      @endif
+  @endif
+  @if(Auth::check())
+      @if (Auth::user()->isFree())
+        <a href="{{ url('catalogfree')}}" class="awhite">
+          <i class="fas fa-arrow-left fa-lg"></i>
+        </a>
+      @endif
+  @endif
+</div>
 <div class="container">
   <br/>
   <video controls buffered preload="none" poster="https://image.tmdb.org/t/p/w1280{{$data->backdrop_path}}" id="player">

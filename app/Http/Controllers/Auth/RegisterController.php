@@ -33,7 +33,7 @@ class RegisterController extends Controller
      */
     // protected $redirectTo = RouteServiceProvider::HOME;
     protected function redirectTo( ) {
-        return('/billing');
+        return('/catalogfree');
     }
 
     /**

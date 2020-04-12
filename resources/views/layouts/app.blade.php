@@ -34,6 +34,7 @@
                     @if (Auth::user()->isPremium())
                       <a class="navbar-brand" href="{{ url('/catalog') }}">
                           {{ config('app.name', 'Flixnet') }}
+                          <img src="{{ asset('img/fondfinal.png') }}" alt="Logo">
                       </a>
                     @endif
                 @endif
@@ -47,6 +48,7 @@
                 @if(Auth::check())
                     @if (Auth::user()->isFree())
                       <a class="navbar-brand" href="{{ url('/catalogfree') }}">
+                          <!-- <img src="{{ asset('img/logo.png') }}" alt="Logo"> -->
                           {{ config('app.name', 'Flixnet') }}
                       </a>
                     @endif
