@@ -19,8 +19,8 @@ class CatalogController extends Controller
      */
     public function index()
     {
-      $contents = Content::all();
-      $series = Serie::all();
+      $contents = Content::orderBy('contentname', 'asc')->get();
+      $series = Serie::orderBy('serie_name', 'asc')->get();
       return view('catalog', compact('contents','series'));
     }
 
@@ -31,7 +31,7 @@ class CatalogController extends Controller
      */
     public function preview()
     {
-      $contents = Content::all();
+      $contents = Content::limit(12)->get();
       $series = Serie::all();
       return view('preview', compact('contents','series'));
     }
