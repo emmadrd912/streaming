@@ -53,41 +53,45 @@
     </div>
   @else
     <div class="row">
-      @foreach ($series as $serie)
-        @if (is_null($serie->still_path))
+      @foreach ($series as $name=>$serie)
+        <div style="background-color:blue; margin-right:20px">
+        <h2>{{$name}}</h2>
+        @foreach ($serie as $episode)
+        @if (is_null($episode->still_path))
           <div class="conteneur goodplace">
-            <a href="{{ route('serie.go',$serie->id)}}">
-                <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg serieplaceholder"/>
+            <a href="{{ route('serie.go',$episode->id)}}">
+                <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg episodeplaceholder"/>
             </a>
             <div class="middle">
               <div class="text">
                 <p>
-                  <a class="awhite" href="{{ route('serie.go',$serie->id)}}">
-                    {{$serie->episode_name}}
-                    {{$serie->serie_name}}
+                  <a class="awhite" href="{{ route('serie.go',$episode->id)}}">
+                    {{$episode->episode_name}}
                   </a>
                 </p>
-                <p> {{$serie->vote}}/10 </p>
+                <p> {{$episode->vote}}/10 </p>
               </div>
             </div>
           </div>
           @else
             <div class="conteneur contmar">
-              <a href="{{ route('serie.go',$serie->id)}}">
-                  <img src="https://image.tmdb.org/t/p/w154{{ $serie->still_path}}" class="catalogimg" style=""/>
+              <a href="{{ route('serie.go',$episode->id)}}">
+                  <img src="https://image.tmdb.org/t/p/w154{{ $episode->still_path}}" class="catalogimg" style=""/>
               </a>
               <div class="middle">
                 <div class="text">
                   <p>
-                    <a class="awhite" href="{{ route('serie.go',$serie->id)}}">
-                      {{$serie->episode_name}} {{$serie->serie_name}}
+                    <a class="awhite" href="{{ route('serie.go',$episode->id)}}">
+                      {{$episode->episode_name}}
                     </a>
                   </p>
-                  <p> {{$serie->vote}}/10 </p>
+                  <p> {{$episode->vote}}/10 </p>
                 </div>
               </div>
             </div>
         @endif
+        @endforeach
+        </div>
       @endforeach
     </div>
   @endif
