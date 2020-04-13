@@ -52,45 +52,50 @@
       <p> No serie yet, it will happen soon :) </p>
     </div>
   @else
-    <div class="row"> 
+    <div class="row">
       @foreach ($series as $name=>$serie)
-        <div style="background-color:blue; margin-right:20px">
-        <h2>{{$name}}</h2>
-        @foreach ($serie as $episode)
-        @if (is_null($episode->still_path))
-          <div class="conteneur goodplace">
-            <a href="{{ route('serie.go',$episode->id)}}">
-                <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg episodeplaceholder"/>
-            </a>
-            <div class="middle">
-              <div class="text">
-                <p>
-                  <a class="awhite" href="{{ route('serie.go',$episode->id)}}">
-                    {{$episode->episode_name}}
-                  </a>
-                </p>
-                <p> {{$episode->vote}}/10 </p>
-              </div>
-            </div>
-          </div>
-          @else
-            <div class="conteneur contmar">
-              <a href="{{ route('serie.go',$episode->id)}}">
-                  <img src="https://image.tmdb.org/t/p/w154{{ $episode->still_path}}" class="catalogimg" style=""/>
-              </a>
-              <div class="middle">
-                <div class="text">
-                  <p>
-                    <a class="awhite" href="{{ route('serie.go',$episode->id)}}">
-                      {{$episode->episode_name}}
+        <div style="margin-left:3%; width:100%;">
+          <h4>{{$name}}</h4>
+          @foreach ($serie as $saison)
+            <p> {{ $saison->episode_season }} </p>
+            <div class="" style="display:flex;">
+              @foreach ($serie as $episode)
+                @if (is_null($episode->still_path))
+                  <div class="conteneur goodplace">
+                    <a href="{{ route('serie.go',$episode->id)}}">
+                        <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg episodeplaceholder"/>
                     </a>
-                  </p>
-                  <p> {{$episode->vote}}/10 </p>
-                </div>
-              </div>
+                    <div class="middle">
+                      <div class="text">
+                        <p>
+                          <a class="awhite" href="{{ route('serie.go',$episode->id)}}">
+                            {{$episode->episode_name}}
+                          </a>
+                        </p>
+                        <p> {{$episode->vote}}/10 </p>
+                      </div>
+                    </div>
+                  </div>
+                  @else
+                    <div class="conteneur contmar">
+                      <a href="{{ route('serie.go',$episode->id)}}">
+                          <img src="https://image.tmdb.org/t/p/w154{{ $episode->still_path}}" class="catalogimg" style=""/>
+                      </a>
+                      <div class="middle">
+                        <div class="text">
+                          <p>
+                            <a class="awhite" href="{{ route('serie.go',$episode->id)}}">
+                              {{$episode->episode_name}}
+                            </a>
+                          </p>
+                          <p> {{$episode->vote}}/10 </p>
+                        </div>
+                      </div>
+                    </div>
+                @endif
+              @endforeach
             </div>
-        @endif
-        @endforeach
+          @endforeach
         </div>
       @endforeach
     </div>
