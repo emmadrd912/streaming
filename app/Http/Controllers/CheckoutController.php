@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Plan;
 use App\User;
+use Mail;
 use Stripe\Stripe;
 use App\Country;
 use DB;
@@ -42,6 +43,15 @@ class CheckoutController extends Controller
             ]);
         DB::table('model_has_roles')->where('model_id',Auth::id())->delete();
         auth()->user()->assignRole('Premium');
+        $to_email = auth()->user()->email;
+        $to_name = auth()->user()->name;
+        $test = array('name'=>$to_name, "body" => "Vous êtes passer premium");
+        Mail::send('emails.mail', $test, function($message) use ($to_name, $to_email)
+        {
+            $message->to($to_email, $to_name)
+                    ->subject('Premium Flixnet');
+            $message->from('mymonitornawak@gmail.com', 'flixnet');
+        });
         return redirect()->route('billing')->withMessage('Subscribed successfully!');
        } catch (\Exception $e) {
            return redirect()->back()->withError($e->getMessage());
