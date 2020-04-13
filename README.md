@@ -139,7 +139,7 @@ Grace au nom d'une vidéo nous arrivons automatiquement récuperer ses informati
 Toute les 24 heures le catalogue de vidéo pour les utilisateurs gratuit s'actualise
 ## Capture d'écrans
 ![index](rendu/index.PNG)
----
+---------------------
 ![index](rendu/register.PNG)
 ---
 ![index](rendu/freecatalog.PNG)
