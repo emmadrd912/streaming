@@ -9,6 +9,10 @@
 
     <title>{{ config('app.name', 'Flixnet') }}</title>
 
+    <!-- No indexation -->
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
