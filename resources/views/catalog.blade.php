@@ -59,7 +59,7 @@
           @foreach ($serie as $episode_season=>$saison)
             <p> Season {{ $episode_season }} </p>
             <div class="" style="display:flex;">
-              @foreach ($saison as $episode)
+              @foreach ($saison->sortBy('episode_number') as $episode)
                 @if (is_null($episode->still_path))
                   <div class="conteneur goodplace">
                     <a href="{{ route('serie.go',$episode->id)}}">

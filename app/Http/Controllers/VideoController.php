@@ -209,6 +209,7 @@ class VideoController extends Controller
                  'episode_name' => $episode['name'],
                  'episode_id' => $episode['id'],
                  'episode_season' => $episode['season_number'],
+                 'episode_number' => $episode['episode_number'],
                  'serie_name' => $serieinfo[0]['name'],
                  'comment' => $episode['overview'],
                  'vote' => $episode['vote_average'],

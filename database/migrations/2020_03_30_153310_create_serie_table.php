@@ -19,6 +19,7 @@ class CreateSerieTable extends Migration
             $table->string('episode_name');
             $table->string('episode_id');
             $table->integer('episode_season');
+            $table->integer('episode_number');
             $table->string('serie_name');
             $table->text('comment');
             $table->float('vote');
