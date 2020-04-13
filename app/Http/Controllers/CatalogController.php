@@ -62,7 +62,7 @@ class CatalogController extends Controller
         if($contents->isEmpty() or $series->isEmpty()) {
           return view('catalogfree', compact('series','contents'));
         } else {
-          if($diff >= 300 || $date == NULL)
+          if($diff >= 86400 || $date == NULL)
           {
               $contentsCount = 0;
               $random_series = Serie::all()->random(1);
