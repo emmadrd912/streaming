@@ -84,7 +84,7 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script>
       $( document ).ready(function() {
-        let stripe = Stripe("pk_test_PTMDVnmpQg31nJLiqdjTELqh00t1HSAR9L")
+        const stripe = Stripe('{{env('STRIPE_KEY')}}');
         let elements = stripe.elements()
         let style = {
           base: {
