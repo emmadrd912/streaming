@@ -64,6 +64,7 @@ Après vous pouvez installer le projet :
 composer install
 php artisan migrate:fresh
 php artisan db:seed
+php artisan storage:link
 npm run dev
 php artisan serve
 ```
