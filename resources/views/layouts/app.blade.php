@@ -7,6 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- No indexation -->
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+
     <title>{{ config('app.name', 'Flixnet') }}</title>
 
     <!-- Scripts -->
