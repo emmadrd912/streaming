@@ -65,6 +65,9 @@ composer install
 php artisan migrate:fresh
 php artisan db:seed
 php artisan storage:link
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
 npm run dev
 php artisan serve
 ```
@@ -135,3 +138,16 @@ Grace au nom d'une vidéo nous arrivons automatiquement récuperer ses informati
 ### Catalogue gratuit de contenu
 Toute les 24 heures le catalogue de vidéo pour les utilisateurs gratuit s'actualise
 ## Capture d'écrans
+![index](rendu/index.PNG)
+---
+![index](rendu/register.PNG)
+---
+![index](rendu/freecatalog.PNG)
+---
+![index](rendu/subscribe.PNG)
+---
+![index](rendu/payment.PNG)
+---
+![index](rendu/payment.PNG)
+---
+![index](rendu/catalog_premium.PNG)
