@@ -112,7 +112,7 @@
         </div>
         <div class="fond flex-center position-ref full-height">
             <div class="content">
-                <div class="m-b-md titre50">
+                <div class="m-b-md titre50" style="color:white;">
                     Your favorite movies & shows in one place
                 </div>
                 <div class="links">
