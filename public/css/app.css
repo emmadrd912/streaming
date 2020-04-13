@@ -11144,6 +11144,22 @@ body {
   padding-right: 5%;
 }
 
+.catalogsort {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.catalogsort::-webkit-scrollbar {
+  height: 5px;
+  background-color: #1a1d29;
+}
+
+.catalogsort::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
 @media (max-width: 950px) {
   .table thead {
     display: none;

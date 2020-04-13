@@ -269,6 +269,23 @@ html, body {
    flex-direction:inherit; padding-right:5%;
 }
 
+.catalogsort {
+  display:flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.catalogsort::-webkit-scrollbar {
+  height:5px;
+  background-color: rgb(26, 29, 41);
+}
+
+.catalogsort::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255, .2);
+  border-radius: 5px;
+  // border-right: 2px solid;
+}
+
 @media (max-width: 950px){
   .table thead {
     display: none;

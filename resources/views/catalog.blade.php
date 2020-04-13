@@ -55,10 +55,10 @@
     <div class="row">
       @foreach ($series as $name=>$serie)
         <div style="margin-left:3%; width:100%;">
-          <h4>{{$name}}</h4>
+          <h4 style="margin-bottom:2%;">{{$name}}</h4>
           @foreach ($serie as $episode_season=>$saison)
             <p> Season {{ $episode_season }} </p>
-            <div class="" style="display:flex;">
+            <div class="catalogsort">
               @foreach ($saison->sortBy('episode_number') as $episode)
                 @if (is_null($episode->still_path))
                   <div class="conteneur goodplace">
@@ -67,6 +67,7 @@
                     </a>
                     <div class="middle">
                       <div class="text">
+                        <br/>
                         <p>
                           <a class="awhite" href="{{ route('serie.go',$episode->id)}}">
                             {{$episode->episode_name}}
@@ -83,6 +84,7 @@
                       </a>
                       <div class="middle">
                         <div class="text">
+                          <br/>
                           <p>
                             <a class="awhite" href="{{ route('serie.go',$episode->id)}}">
                               {{$episode->episode_name}}
@@ -95,6 +97,7 @@
                 @endif
               @endforeach
             </div>
+            <br/>
           @endforeach
         </div>
       @endforeach
