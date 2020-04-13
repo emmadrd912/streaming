@@ -150,6 +150,12 @@ Toute les 24 heures le catalogue de vidéo pour les utilisateurs gratuit s'actua
 ---
 ![index](rendu/payment.PNG)
 ---
-![index](rendu/payment.PNG)
----
 ![index](rendu/catalog_premium.PNG)
+---
+![index](rendu/admin_panel.PNG)
+---
+![index](rendu/video_panel.PNG)
+---
+![index](rendu/agenda_panel.PNG)
+---
+![index](rendu/agenda.png)
