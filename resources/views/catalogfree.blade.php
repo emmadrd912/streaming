@@ -51,6 +51,9 @@
       @else
         @foreach ($series as $serie)
           @if (is_null($serie->still_path))
+          <div style="margin-left:3%;">
+            <h4> {{$serie->serie_name}} </h4>
+            <p> Season {{ $serie->episode_season }} - Episode {{ $serie->episode_number }}</p>
             <div class="conteneur goodplace">
               <a href="{{ route('serie.go',$serie->id)}}">
                   <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg serieplaceholder"/>
@@ -60,13 +63,13 @@
                   <p>
                     <a class="awhite" href="{{ route('serie.go',$serie->id)}}">
                       {{$serie->episode_name}}
-                      {{$serie->serie_name}}
                     </a>
                   </p>
                   <p> {{$serie->vote}}/10 </p>
                 </div>
               </div>
             </div>
+          </div>
             @else
             <div style="margin-left:3%;">
               <h4> {{$serie->serie_name}} </h4>
@@ -80,7 +83,7 @@
                     <br/>
                     <p>
                       <a class="awhite" href="{{ route('serie.go',$serie->id)}}">
-                        {{$serie->episode_name}} {{$serie->serie_name}}
+                        {{$serie->episode_name}}
                       </a>
                     </p>
                     <p> {{$serie->vote}}/10 </p>

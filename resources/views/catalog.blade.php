@@ -63,7 +63,7 @@
                 @if (is_null($episode->still_path))
                   <div class="conteneur goodplace">
                     <a href="{{ route('serie.go',$episode->id)}}">
-                        <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg episodeplaceholder"/>
+                        <img src="https://www.flixdetective.com/web/images/poster-placeholder.png" class="catalogimg serieplaceholder"/>
                     </a>
                     <div class="middle">
                       <div class="text">
