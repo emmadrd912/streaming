@@ -68,6 +68,9 @@
               </div>
             </div>
             @else
+            <div style="margin-left:3%;">
+              <h4> {{$serie->serie_name}} </h4>
+              <p> Season {{ $serie->episode_season }} - Episode {{ $serie->episode_number }}</p>
               <div class="conteneur contmar">
                 <a href="{{ route('serie.go',$serie->id)}}">
                     <img src="https://image.tmdb.org/t/p/w154{{ $serie->still_path}}" class="catalogimg"/>
@@ -84,6 +87,7 @@
                   </div>
                 </div>
               </div>
+            </div>
           @endif
         @endforeach
       @endif
