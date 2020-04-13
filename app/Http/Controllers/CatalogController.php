@@ -21,8 +21,8 @@ class CatalogController extends Controller
     {
       $contents = Content::orderBy('contentname', 'asc')->get();
       $series = Serie::all()->groupBy("serie_name");
-      $saisons = Serie::where('serie_name', '=', $series)->get();
-      // $saisons = Serie::all()->groupBy("episode_season");
+      //$saisons = Serie::where('serie_name', '=', $series)->get();
+      $saisons = Serie::all()->groupBy("episode_season");
       //->map(function($serie){return $serie->sortBy("episode_name");});
 
       return view('catalog', compact('contents','series','saisons'));

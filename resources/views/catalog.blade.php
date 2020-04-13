@@ -56,8 +56,9 @@
       @foreach ($series as $name=>$serie)
         <div style="margin-left:3%; width:100%;">
           <h4>{{$name}}</h4>
-          @foreach ($serie as $saison)
-            <p> {{ $saison->episode_season }} </p>
+          
+          @foreach ($saisons as $episode_season=>$saison)
+            <p> {{ $episode_season }} </p>
             <div class="" style="display:flex;">
               @foreach ($serie as $episode)
                 @if (is_null($episode->still_path))
