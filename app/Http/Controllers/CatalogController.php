@@ -20,12 +20,14 @@ class CatalogController extends Controller
     public function index()
     {
       $contents = Content::orderBy('contentname', 'asc')->get();
-      $series = Serie::all()->groupBy("serie_name");
+      $series = Serie::all()->groupBy("serie_name")->map(function($serie){
+        return $serie->groupBy('episode_season');
+      });
       //$saisons = Serie::where('serie_name', '=', $series)->get();
-      $saisons = Serie::all()->groupBy("episode_season");
+
       //->map(function($serie){return $serie->sortBy("episode_name");});
 
-      return view('catalog', compact('contents','series','saisons'));
+      return view('catalog', compact('contents','series'));
     }
 
     /**

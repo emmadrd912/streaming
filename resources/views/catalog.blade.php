@@ -56,11 +56,10 @@
       @foreach ($series as $name=>$serie)
         <div style="margin-left:3%; width:100%;">
           <h4>{{$name}}</h4>
-          
-          @foreach ($saisons as $episode_season=>$saison)
+          @foreach ($serie as $episode_season=>$saison)
             <p> {{ $episode_season }} </p>
             <div class="" style="display:flex;">
-              @foreach ($serie as $episode)
+              @foreach ($saison as $episode)
                 @if (is_null($episode->still_path))
                   <div class="conteneur goodplace">
                     <a href="{{ route('serie.go',$episode->id)}}">
