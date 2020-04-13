@@ -52,7 +52,7 @@
       <p> No serie yet, it will happen soon :) </p>
     </div>
   @else
-    <div class="row">
+    <div class="row"> 
       @foreach ($series as $name=>$serie)
         <div style="background-color:blue; margin-right:20px">
         <h2>{{$name}}</h2>
