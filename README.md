@@ -68,6 +68,7 @@ php artisan storage:link
 php artisan cache:clear
 php artisan config:clear
 php artisan view:clear
+npm install
 npm run dev
 php artisan serve
 ```
