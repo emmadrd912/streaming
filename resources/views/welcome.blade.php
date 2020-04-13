@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="links">
-                    <p> Welcome on the best streaming site </p>
+                    <p style="color:white;"> Welcome on the best streaming site </p>
                 </div>
             </div>
         </div>
@@ -70,7 +70,19 @@
                         <h6 class="ita card-subtitle mb-2 text-muted"> Limited </h6>
                         <p class="card-text"> <i class="fas fa-check"></i>  Limited to 2 random movie per day.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Limited to 1 random TV show episode per day.</p>
-                        <a href="{{ route('login') }}" class="card-link"> Choose </a>
+                        @if(Auth::check())
+                            @if (Auth::user()->isPremium())
+                              <a href="{{ url('catalog') }}" class="card-link"> Choose </a>
+                            @endif
+                            @if (Auth::user()->isAdmin())
+                              <a href="{{ url('catalog') }}" class="card-link"> Choose </a>
+                            @endif
+                            @if (Auth::user()->isFree())
+                              <a href="{{ url('catalogfree') }}" class="card-link"> Choose </a>
+                            @endif
+                        @else
+                          <a href="{{ route('register') }}" class="card-link"> Choose </a>
+                        @endif
                       </div>
                     </div>
                     <div class="mediaprices boxes card prices_title">
@@ -80,7 +92,19 @@
                         <p class="card-text"> <i class="fas fa-check"></i>  Unlimited access to all the movie.</p>
                         <p class="card-text"> <i class="fas fa-check"></i>  Unlimited access to all TV show episode.</p>
                         <br/>
-                        <a href="{{ route('login') }}" class="card-link"> Choose </a>
+                        @if(Auth::check())
+                            @if (Auth::user()->isPremium())
+                              <a href="{{ url('catalog') }}" class="card-link"> Choose </a>
+                            @endif
+                            @if (Auth::user()->isAdmin())
+                              <a href="{{ url('catalog') }}" class="card-link"> Choose </a>
+                            @endif
+                            @if (Auth::user()->isFree())
+                              <a href="{{ url('catalogfree') }}" class="card-link"> Choose </a>
+                            @endif
+                        @else
+                          <a href="{{ route('register') }}" class="card-link"> Choose </a>
+                        @endif
                       </div>
                     </div>
                 </div>

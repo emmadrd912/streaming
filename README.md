@@ -9,7 +9,7 @@ php
 ```
 Vous devez aussi ajouter un fichier .env a la racine du projet voici un exemple :
 ```
-APP_NAME="streaming"
+APP_NAME="Flixnet"
 APP_ENV=local
 APP_KEY=base64:t8CZOyRPZfRlFiYYnf2wbYYCxTqlTZd7JlnaiQow6v8=
 APP_DEBUG=true
@@ -21,8 +21,8 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=[[ Name of your database ]]
-DB_USERNAME=[[ User of you database ]] 
-DB_PASSWORD=[[ Password of your user ]] 
+DB_USERNAME=[[ User of you database ]]
+DB_PASSWORD=[[ Password of your user ]]
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
@@ -112,7 +112,7 @@ Home
 ---- Edit
 --- Admin panel
 ---- Create user
----- Edit 
+---- Edit
 ---- Delete
 --- Video panel
 ---- Create content
